@@ -4,13 +4,22 @@ import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const escape = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+const decisions = {
+  reduce: ['调整前 · 存在重复解释', '建议 · 删除重复信息'],
+  keep: ['原状 · 信息已经充分', '建议 · 保持原样'],
+  add: ['原状 · 缺少概念说明', '建议 · 补充必要说明'],
+  expand: ['原状 · 起步依据不足', '建议 · 增加分步引导'],
+  retain: ['原状 · 摘要与字段协同', '建议 · 保留合理重复'],
+};
 
 export function renderExamples(cases) {
   const sections = cases.map((item, index) => {
+    const labels = decisions[item.decision];
+    if (!labels) throw new Error(`Unknown editorial decision: ${item.decision}`);
     const variants = [
-      ['before', '精简前 · 重复解释', item.before],
+      ['before', labels[0], item.before],
       ...(item.overtrimmed ? [['overtrimmed', '删得过头 · 反例', item.overtrimmed]] : []),
-      ['after', '适度精简 · 保留必要信息', item.after],
+      ['after', labels[1], item.after],
     ];
     return `
 <section class="comparison" id="${escape(item.id)}" aria-labelledby="title-${escape(item.id)}">
@@ -35,7 +44,7 @@ ${variants.map(([key, title, html]) => `    <article class="variant" data-varian
 <main>
   <header class="page-header">
     <h1>删冗余，不删理解。</h1>
-    <p>${cases.length} 组合成界面，按受众与场景保留最少但充分的信息。三方对照的中间列是过删反例，不是推荐方案。</p>
+    <p>${cases.length} 组合成界面，按受众与场景删、留或补充信息；建议方案不一定更短。三方对照的中间列是过删反例，不是推荐方案。</p>
     <p>这是人工编写的静态教学示例，不是 agent 运行效果测评。按钮不连接业务，输入仅留在当前页面。</p>
     <nav aria-label="对照场景">${cases.map((item, index) => `<a href="#${escape(item.id)}">${index + 1}. ${escape(item.title.split('：')[0])}</a>`).join('')}</nav>
   </header>

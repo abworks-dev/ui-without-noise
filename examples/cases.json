@@ -4,82 +4,203 @@
     "title": "首次空态：少重复，不少概念引导",
     "context": "面向首次使用者；工作区用于归集项目，当前已确认没有工作区。",
     "change": "去掉重复介绍与说明卡；把有用的项目归属关系留在空态中，不把按钮当成概念解释。",
-    "protected": ["工作区", "还没有工作区", "创建工作区"],
-    "learning": ["把相关项目放在同一个工作区中。"],
+    "protected": [
+      "工作区",
+      "还没有工作区",
+      "创建工作区"
+    ],
+    "learning": [
+      "把相关项目放在同一个工作区中。"
+    ],
     "overtrimmed": "<div class=\"heading\"><h3>工作区</h3></div><div class=\"empty\"><h4>还没有工作区</h4><button type=\"button\" class=\"primary\">创建工作区</button></div>",
     "before": "<div class=\"heading\"><div><span class=\"eyebrow\">WORKSPACE MANAGEMENT</span><h3>工作区</h3></div><span class=\"badge\">工作区管理</span></div><p class=\"intro\">在这里创建、管理和组织你的工作区。</p><div class=\"notice\">工作区用于集中组织你的项目。你可以在这里查看所有工作区。</div><div class=\"empty\"><span class=\"empty-mark\" aria-hidden=\"true\">＋</span><h4>还没有工作区</h4><p>创建第一个工作区，开始组织你的项目。</p><button type=\"button\" class=\"primary\">创建工作区</button><p class=\"meta\">点击上方按钮即可创建一个新的工作区。</p></div>",
-    "after": "<div class=\"heading\"><h3>工作区</h3></div><div class=\"empty\"><h4>还没有工作区</h4><p>把相关项目放在同一个工作区中。</p><button type=\"button\" class=\"primary\">创建工作区</button></div>"
+    "after": "<div class=\"heading\"><h3>工作区</h3></div><div class=\"empty\"><h4>还没有工作区</h4><p>把相关项目放在同一个工作区中。</p><button type=\"button\" class=\"primary\">创建工作区</button></div>",
+    "decision": "reduce"
   },
   {
     "id": "section-heading",
     "title": "列表：标题与操作已经说明用途",
     "change": "去掉英文眉题、重复副标题和每行的同义 badge；项目名称、数量和操作不变。",
-    "protected": ["个人工作区的项目", "新建项目", "网站改版", "12 条笔记", "旅行计划", "8 条笔记", "打开"],
+    "protected": [
+      "个人工作区的项目",
+      "新建项目",
+      "网站改版",
+      "12 条笔记",
+      "旅行计划",
+      "8 条笔记",
+      "打开"
+    ],
     "before": "<span class=\"eyebrow\">YOUR PROJECTS</span><div class=\"heading\"><h3>个人工作区的项目</h3><button type=\"button\" class=\"primary\">新建项目</button></div><p class=\"intro\">集中管理你的项目，随时查看与打开。</p><div class=\"notice\">下面列出了当前工作区的所有项目。</div><div class=\"list\"><div class=\"item\"><div><h4>网站改版 <span class=\"badge\">项目</span></h4><p class=\"meta\">这是你的一个项目 · 12 条笔记</p></div><button type=\"button\">打开</button></div><div class=\"item\"><div><h4>旅行计划 <span class=\"badge\">项目</span></h4><p class=\"meta\">这是你的一个项目 · 8 条笔记</p></div><button type=\"button\">打开</button></div></div>",
-    "after": "<div class=\"heading\"><h3>个人工作区的项目</h3><button type=\"button\" class=\"primary\">新建项目</button></div><div class=\"list\"><div class=\"item\"><div><h4>网站改版</h4><p class=\"meta\">12 条笔记</p></div><button type=\"button\">打开</button></div><div class=\"item\"><div><h4>旅行计划</h4><p class=\"meta\">8 条笔记</p></div><button type=\"button\">打开</button></div></div>"
+    "after": "<div class=\"heading\"><h3>个人工作区的项目</h3><button type=\"button\" class=\"primary\">新建项目</button></div><div class=\"list\"><div class=\"item\"><div><h4>网站改版</h4><p class=\"meta\">12 条笔记</p></div><button type=\"button\">打开</button></div><div class=\"item\"><div><h4>旅行计划</h4><p class=\"meta\">8 条笔记</p></div><button type=\"button\">打开</button></div></div>",
+    "decision": "reduce"
   },
   {
     "id": "form",
     "title": "表单：删显而易见的指导，留真实约束",
     "change": "不再解释输入框怎么用；保留可见 label、必填、长度限制和字段错误。",
-    "protected": ["创建项目", "项目名称（必填）", "最多 40 个字符。", "名称已被使用，请换一个名称。"],
+    "protected": [
+      "创建项目",
+      "项目名称（必填）",
+      "最多 40 个字符。",
+      "名称已被使用，请换一个名称。"
+    ],
     "before": "<h3>创建项目</h3><p class=\"intro\">填写下方信息来创建一个新的项目。</p><div class=\"field\"><label for=\"name-before\">项目名称（必填）</label><p class=\"meta\">请在此输入你的项目名称。</p><input id=\"name-before\" value=\"旅行计划\" required maxlength=\"40\" aria-invalid=\"true\" aria-describedby=\"name-hint-before name-error-before\"><p id=\"name-hint-before\" class=\"hint\">最多 40 个字符。</p><p id=\"name-error-before\" class=\"error\">名称已被使用，请换一个名称。</p></div><div class=\"notice\">完成填写后，点击创建项目按钮继续。</div><button type=\"button\" class=\"primary\">创建项目</button>",
-    "after": "<h3>创建项目</h3><div class=\"field\"><label for=\"name-after\">项目名称（必填）</label><input id=\"name-after\" value=\"旅行计划\" required maxlength=\"40\" aria-invalid=\"true\" aria-describedby=\"name-hint-after name-error-after\"><p id=\"name-hint-after\" class=\"hint\">最多 40 个字符。</p><p id=\"name-error-after\" class=\"error\">名称已被使用，请换一个名称。</p></div><button type=\"button\" class=\"primary\">创建项目</button>"
+    "after": "<h3>创建项目</h3><div class=\"field\"><label for=\"name-after\">项目名称（必填）</label><input id=\"name-after\" value=\"旅行计划\" required maxlength=\"40\" aria-invalid=\"true\" aria-describedby=\"name-hint-after name-error-after\"><p id=\"name-hint-after\" class=\"hint\">最多 40 个字符。</p><p id=\"name-error-after\" class=\"error\">名称已被使用，请换一个名称。</p></div><button type=\"button\" class=\"primary\">创建项目</button>",
+    "decision": "reduce"
   },
   {
     "id": "permission",
     "title": "权限：准确说一次，而不是反复免责声明",
     "change": "合并同一作用域的权限说明；保留可见原因和下一步，不把禁用原因藏到 tooltip。",
-    "protected": ["工作区设置", "只读权限，无法编辑。联系管理员申请编辑权限。", "编辑设置"],
+    "protected": [
+      "工作区设置",
+      "只读权限，无法编辑。联系管理员申请编辑权限。",
+      "编辑设置"
+    ],
     "before": "<h3>工作区设置</h3><p class=\"intro\">查看和管理当前工作区的设置。</p><div class=\"notice warning\">你当前处于只读模式，不能进行编辑操作。</div><div class=\"notice warning\">此页面的编辑功能需要编辑权限。</div><p id=\"permission-before\" class=\"hint\">只读权限，无法编辑。联系管理员申请编辑权限。</p><button type=\"button\" disabled aria-describedby=\"permission-before\">编辑设置</button>",
-    "after": "<h3>工作区设置</h3><p id=\"permission-after\" class=\"state\">只读权限，无法编辑。联系管理员申请编辑权限。</p><button type=\"button\" disabled aria-describedby=\"permission-after\">编辑设置</button>"
+    "after": "<h3>工作区设置</h3><p id=\"permission-after\" class=\"state\">只读权限，无法编辑。联系管理员申请编辑权限。</p><button type=\"button\" disabled aria-describedby=\"permission-after\">编辑设置</button>",
+    "decision": "reduce"
   },
   {
     "id": "unknown-result",
     "title": "结果未知：减少重复，不伪造成功",
     "change": "删掉同义警告和通用安全套话；未知事实、避免重复保存的约束及查询操作完整保留。",
-    "protected": ["保存", "保存结果未知。先查询这次保存的结果，不要重复保存。", "查询结果"],
+    "protected": [
+      "保存",
+      "保存结果未知。先查询这次保存的结果，不要重复保存。",
+      "查询结果"
+    ],
     "before": "<div class=\"heading\"><h3>保存</h3><span class=\"badge\">状态待确认</span></div><p class=\"intro\">在这里查看当前保存操作的状态。</p><div class=\"notice warning\">暂时无法确定保存是否成功。</div><div class=\"notice warning\">保存结果未知。先查询这次保存的结果，不要重复保存。</div><p class=\"meta\">为确保操作安全，请在确认结果后继续。</p><button type=\"button\" class=\"primary\">查询结果</button>",
-    "after": "<h3>保存</h3><p class=\"state warning-text\">保存结果未知。先查询这次保存的结果，不要重复保存。</p><button type=\"button\" class=\"primary\">查询结果</button>"
+    "after": "<h3>保存</h3><p class=\"state warning-text\">保存结果未知。先查询这次保存的结果，不要重复保存。</p><button type=\"button\" class=\"primary\">查询结果</button>",
+    "decision": "reduce"
   },
   {
     "id": "destructive-action",
     "title": "危险操作：少废话，不少后果",
     "change": "删掉功能自述和重复提醒；对象、12 条笔记、永久删除及不可恢复完整保留。",
-    "protected": ["删除项目？", "将永久删除「旅行计划」及其中 12 条笔记，无法恢复。", "取消", "删除项目"],
+    "protected": [
+      "删除项目？",
+      "将永久删除「旅行计划」及其中 12 条笔记，无法恢复。",
+      "取消",
+      "删除项目"
+    ],
     "before": "<span class=\"eyebrow\">PROJECT DELETION</span><h3>删除项目？</h3><p class=\"intro\">你可以在此删除不再需要的项目。</p><div class=\"notice warning\">请谨慎操作，删除是一项重要操作。</div><p class=\"state danger-text\">将永久删除「旅行计划」及其中 12 条笔记，无法恢复。</p><p class=\"meta\">点击删除项目进行删除，或点击取消返回。</p><div class=\"actions\"><button type=\"button\">取消</button><button type=\"button\" class=\"danger\">删除项目</button></div>",
-    "after": "<h3>删除项目？</h3><p class=\"state danger-text\">将永久删除「旅行计划」及其中 12 条笔记，无法恢复。</p><div class=\"actions\"><button type=\"button\">取消</button><button type=\"button\" class=\"danger\">删除项目</button></div>"
+    "after": "<h3>删除项目？</h3><p class=\"state danger-text\">将永久删除「旅行计划」及其中 12 条笔记，无法恢复。</p><div class=\"actions\"><button type=\"button\">取消</button><button type=\"button\" class=\"danger\">删除项目</button></div>",
+    "decision": "reduce"
   },
   {
     "id": "filtered-results",
     "title": "筛选无结果：说明条件，不误报整个集合为空",
     "context": "熟悉产品的用户；搜索词为“设计”，当前工作区中没有符合条件的项目。",
     "change": "保留搜索范围与清除筛选动作；不写通用搜索教程，也不把无匹配改成没有项目。",
-    "protected": ["项目", "没有匹配“设计”的项目", "清除筛选"],
-    "learning": ["更换关键词，或清除筛选查看全部项目。"],
+    "protected": [
+      "项目",
+      "没有匹配“设计”的项目",
+      "清除筛选"
+    ],
+    "learning": [
+      "更换关键词，或清除筛选查看全部项目。"
+    ],
     "before": "<span class=\"eyebrow\">PROJECT SEARCH</span><h3>项目</h3><p class=\"intro\">在这里搜索和查找你的项目。</p><div class=\"notice\">当前正在查看关键词“设计”的搜索结果。</div><div class=\"empty\"><h4>没有匹配“设计”的项目</h4><p>更换关键词，或清除筛选查看全部项目。</p><button type=\"button\">清除筛选</button><p class=\"meta\">点击上方按钮可以移除搜索条件。</p></div>",
     "overtrimmed": "<h3>项目</h3><div class=\"empty\"><h4>没有项目</h4></div>",
-    "after": "<h3>项目</h3><div class=\"empty\"><h4>没有匹配“设计”的项目</h4><p>更换关键词，或清除筛选查看全部项目。</p><button type=\"button\">清除筛选</button></div>"
+    "after": "<h3>项目</h3><div class=\"empty\"><h4>没有匹配“设计”的项目</h4><p>更换关键词，或清除筛选查看全部项目。</p><button type=\"button\">清除筛选</button></div>",
+    "decision": "reduce"
   },
   {
     "id": "favorites",
     "title": "收藏空态：保留用户尚未学会的操作路径",
     "context": "首次使用收藏；项目列表已有“收藏”操作，本页可通过“浏览项目”到达该列表。",
     "change": "保留如何产生收藏内容的学习线索与真实入口；删掉功能自夸和重复按钮说明。",
-    "protected": ["收藏", "还没有收藏的项目", "浏览项目"],
-    "learning": ["在项目列表中选择“收藏”，常用项目就会显示在这里。"],
+    "protected": [
+      "收藏",
+      "还没有收藏的项目",
+      "浏览项目"
+    ],
+    "learning": [
+      "在项目列表中选择“收藏”，常用项目就会显示在这里。"
+    ],
     "before": "<span class=\"eyebrow\">YOUR FAVORITES</span><h3>收藏</h3><p class=\"intro\">轻松管理你的收藏，让常用项目触手可及。</p><div class=\"notice\">这里是用于展示你收藏的项目的地方。</div><div class=\"empty\"><h4>还没有收藏的项目</h4><p>在项目列表中选择“收藏”，常用项目就会显示在这里。</p><button type=\"button\" class=\"primary\">浏览项目</button><p class=\"meta\">点击浏览项目按钮查看可收藏的项目。</p></div>",
     "overtrimmed": "<h3>收藏</h3><div class=\"empty\"><h4>还没有收藏的项目</h4><button type=\"button\" class=\"primary\">浏览项目</button></div>",
-    "after": "<h3>收藏</h3><div class=\"empty\"><h4>还没有收藏的项目</h4><p>在项目列表中选择“收藏”，常用项目就会显示在这里。</p><button type=\"button\" class=\"primary\">浏览项目</button></div>"
+    "after": "<h3>收藏</h3><div class=\"empty\"><h4>还没有收藏的项目</h4><p>在项目列表中选择“收藏”，常用项目就会显示在这里。</p><button type=\"button\" class=\"primary\">浏览项目</button></div>",
+    "decision": "reduce"
   },
   {
     "id": "quiet-notifications",
     "title": "暂时无事：状态说清楚就够，不硬加引导",
     "context": "通知功能已配置、读取已完成；当前没有新通知，不需要用户采取动作。",
     "change": "保留明确的无新通知状态；不为凑空态模板添加教程、插图或没有必要的按钮。",
-    "protected": ["通知", "暂时没有新通知"],
+    "protected": [
+      "通知",
+      "暂时没有新通知"
+    ],
     "before": "<span class=\"eyebrow\">NOTIFICATION CENTER</span><h3>通知</h3><p class=\"intro\">在这里查看并管理你的最新通知。</p><div class=\"notice\">当有新的通知时，你可以在此查看。</div><div class=\"empty\"><h4>暂时没有新通知</h4><p>目前没有需要显示的新通知。</p></div>",
     "overtrimmed": "<h3>通知</h3><div class=\"empty\"><p>—</p></div>",
+    "after": "<h3>通知</h3><div class=\"empty\"><h4>暂时没有新通知</h4></div>",
+    "decision": "reduce"
+  },
+  {
+    "id": "already-sufficient",
+    "decision": "keep",
+    "title": "保持原样：已经充分，就不为改而改",
+    "context": "熟悉产品的用户；通知已经配置且读取完成，没有新通知，也没有待处理事项。",
+    "change": "原文已经表达完整状态，没有重复解释；两侧完全一致，不补教程，也不为了显得做过优化而改词。",
+    "protected": [
+      "通知",
+      "暂时没有新通知"
+    ],
+    "before": "<h3>通知</h3><div class=\"empty\"><h4>暂时没有新通知</h4></div>",
     "after": "<h3>通知</h3><div class=\"empty\"><h4>暂时没有新通知</h4></div>"
+  },
+  {
+    "id": "add-context",
+    "decision": "add",
+    "title": "补一句说明：按钮不能解释概念关系",
+    "context": "首次使用工作区；用户不知道工作区与项目的关系。创建工作区的能力在两侧相同。",
+    "change": "不改标题或动作，只补上工作区与项目的归属关系；改进后的内容合理地更长。",
+    "protected": [
+      "工作区",
+      "还没有工作区",
+      "创建工作区"
+    ],
+    "learning": [
+      "把相关项目放在同一个工作区中。"
+    ],
+    "before": "<h3>工作区</h3><div class=\"empty\"><h4>还没有工作区</h4><button type=\"button\" class=\"primary\">创建工作区</button></div>",
+    "after": "<h3>工作区</h3><div class=\"empty\"><h4>还没有工作区</h4><p>把相关项目放在同一个工作区中。</p><button type=\"button\" class=\"primary\">创建工作区</button></div>"
+  },
+  {
+    "id": "guided-start",
+    "decision": "expand",
+    "title": "复杂首次任务：需要分步引导，不只是一句口号",
+    "context": "合成产品中的共享视图首次使用：只展示选中项目，不移动原项目；既有流程是选择项目、设置可查看的人、发布前核对范围。示例只补解释，不新增这些能力。",
+    "change": "保留同一开始入口，补上非显而易见的概念和后续步骤；不用空泛的“轻松开始”替代理解。",
+    "protected": [
+      "共享视图",
+      "还没有共享视图",
+      "选择项目"
+    ],
+    "learning": [
+      "共享视图只展示选中的项目，原项目不会移动。",
+      "设置可查看的人",
+      "发布前核对分享范围"
+    ],
+    "before": "<h3>共享视图</h3><div class=\"empty\"><h4>还没有共享视图</h4><button type=\"button\" class=\"primary\">选择项目</button></div>",
+    "after": "<h3>共享视图</h3><p>共享视图只展示选中的项目，原项目不会移动。</p><h4>还没有共享视图</h4><ol class=\"steps\"><li>选择项目</li><li>设置可查看的人</li><li>发布前核对分享范围</li></ol><button type=\"button\" class=\"primary\">选择项目</button>"
+  },
+  {
+    "id": "purposeful-repetition",
+    "decision": "retain",
+    "title": "合理重复：错误摘要与字段错误各有作用",
+    "context": "较长表单提交失败；顶部摘要提供错误定位，字段旁说明提供局部修正依据。摘要链接可用键盘跳到同一字段。",
+    "change": "摘要和字段错误保留相同原因；文字无需改写成同义词，也不删除任何一处。仅关联 ID 因两组示例共页而不同。",
+    "protected": [
+      "创建项目",
+      "有 1 处需要修改",
+      "项目名称（必填）",
+      "最多 40 个字符。",
+      "名称已被使用，请换一个名称。"
+    ],
+    "before": "<h3>创建项目</h3><section class=\"notice warning error-summary\" aria-labelledby=\"summary-before\"><h4 id=\"summary-before\">有 1 处需要修改</h4><a href=\"#repeat-name-before\">名称已被使用，请换一个名称。</a></section><div class=\"field\"><label for=\"repeat-name-before\">项目名称（必填）</label><input id=\"repeat-name-before\" value=\"旅行计划\" required maxlength=\"40\" aria-invalid=\"true\" aria-describedby=\"repeat-hint-before repeat-error-before\"><p id=\"repeat-hint-before\" class=\"hint\">最多 40 个字符。</p><p id=\"repeat-error-before\" class=\"error\">名称已被使用，请换一个名称。</p></div><button type=\"button\" class=\"primary\">创建项目</button>",
+    "after": "<h3>创建项目</h3><section class=\"notice warning error-summary\" aria-labelledby=\"summary-after\"><h4 id=\"summary-after\">有 1 处需要修改</h4><a href=\"#repeat-name-after\">名称已被使用，请换一个名称。</a></section><div class=\"field\"><label for=\"repeat-name-after\">项目名称（必填）</label><input id=\"repeat-name-after\" value=\"旅行计划\" required maxlength=\"40\" aria-invalid=\"true\" aria-describedby=\"repeat-hint-after repeat-error-after\"><p id=\"repeat-hint-after\" class=\"hint\">最多 40 个字符。</p><p id=\"repeat-error-after\" class=\"error\">名称已被使用，请换一个名称。</p></div><button type=\"button\" class=\"primary\">创建项目</button>"
   }
 ]

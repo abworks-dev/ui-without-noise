@@ -3,7 +3,7 @@ name: ui-without-noise
 description: Prevent and remove redundant UI copy without removing useful guidance. Use when creating or reviewing screens, forms, empty states, subtitles, helper text, banners, badges, or cards. Aim for the least information sufficient to understand and act, not the fewest words. Preserve learning cues, labels, constraints, risks, permissions, and unknown states. Not a general visual redesign.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # UI without noise
@@ -36,7 +36,8 @@ Match the amount of guidance and the composition to the audience and container. 
 Review the rendered screen when available. Ask: who is this for; what must they understand; what is already evident nearby; what would become unclear if this content disappeared?
 For each supporting string and its container, choose:
 
-- **Keep:** it adds a useful concept, learning cue, fact, distinction, constraint, consequence, or next step.
+- **Keep:** it adds a useful concept, learning cue, fact, distinction, constraint, consequence, or next step. If the screen is already sufficient, leave it unchanged; an edit is not mandatory.
+- **Add:** supply a missing concept, recovery cue or step. Complex first-use tasks may need a short paragraph or sequence, not a slogan. Use only established product capabilities.
 - **Rewrite:** the information is needed but vague, repetitive, or longer than necessary.
 - **Merge:** the same fact is repeated in the same scope; retain the useful placement and associations.
 - **Delete:** the interface already communicates it and no necessary meaning is lost; remove the vacant wrapper.
@@ -54,7 +55,9 @@ Check applicable normal, empty, error, unavailable and unknown states; destructi
 | 项目名称 / 请在此输入你的项目名称 | Keep the visible label, remove the obvious instruction. |
 | 文件 / 仅支持 CSV，最大 20 MB | Keep both: the second line is a real constraint. |
 | 没有匹配“设计”的项目 / 清除筛选 | Preserve query scope and the real recovery action. |
-| 暂时没有新通知 | Can be sufficient when loading is complete and no action is needed. |
+| 暂时没有新通知 | Can be sufficient when loading is complete and no action is needed; leave an already sufficient screen unchanged. |
+| 共享视图 / 选择项目 | For an unfamiliar multi-step task, add the established concept and steps rather than a vague slogan. |
+| 错误摘要链接 / 同一字段旁的错误原因 | Keep both: the summary locates the problem, the field error supports correction. |
 | 保存结果未知。先查询本次结果，不要重复保存。 | Keep uncertainty and the safe next step. |
 | 将永久删除「旅行计划」及其中 12 条笔记，无法恢复。 | Keep object, scope, count and consequence. |
 

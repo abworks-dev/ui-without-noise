@@ -13,10 +13,10 @@ const page = task.page('p1');
 const report = {
   evidence: 'browser-rendered synthetic editorial examples; not an agent benchmark',
   captureMethod: 'CDP Page.captureScreenshot, CSS document coordinates, captureBeyondViewport',
-  screenshotSource: 'examples/previews.html; before/after components only; no teaching chrome',
+  screenshotSource: 'examples/previews.html; each before/after component captured separately; no teaching chrome',
   generatedAt: new Date().toISOString(),
   browser: { engine: 'Chromium', userAgent: await page.evaluate(() => navigator.userAgent) },
-  viewports: [1440, 1024, 390, 320],
+  viewports: [1440, 1024, 900, 390, 320],
   inputs: {}, screenshots: [], checks: [],
 };
 for (const file of ['examples/cases.json', 'examples/styles.css', 'examples/index.html', 'examples/previews.html', 'scripts/build-examples.mjs', 'scripts/capture.mjs']) {
@@ -50,6 +50,8 @@ async function inspect(width) {
       for (const fact of item.protected) if (!node.innerText.includes(fact)) missing.push(`${item.id}/${side}: ${fact}`);
     }
     check('necessary facts visible in both recommended variants', missing.length === 0, missing);
+    const decisionLabels = { reduce: '删除重复信息', keep: '保持原样', add: '补充必要说明', expand: '增加分步引导', retain: '保留合理重复' };
+    check('editorial labels reflect actual decisions, not universal reduction', cases.every(item => document.querySelector(`#${item.id} [data-variant="after"] .variant-title`).innerText.includes(decisionLabels[item.decision])), cases.map(item => item.decision));
     const lostLearning = cases.flatMap(item => (item.learning ?? []).filter(fact => !document.querySelector(`#${item.id} [data-variant="after"] .screen`).innerText.includes(fact)).map(fact => `${item.id}: ${fact}`));
     check('useful learning cues visible in recommended variants', lostLearning.length === 0, lostLearning);
     const counterexamples = [...document.querySelectorAll('[data-variant="overtrimmed"]')];
@@ -66,22 +68,30 @@ async function inspect(width) {
   report.checks.push(...checks);
 }
 
-async function capture(id, file) {
+async function capture(id, side, file) {
   // The high-level clip path can produce blank/cropped files. Use CDP's explicit
   // document-coordinate clipping with captureBeyondViewport, then inspect output.
-  const measure = () => page.evaluate(id => {
-    const rect = document.getElementById(id).getBoundingClientRect();
-    const x = Math.floor(rect.x + window.scrollX);
-    const y = Math.floor(rect.y + window.scrollY);
-    return { x, y, width: Math.ceil(rect.right + window.scrollX) - x, height: Math.ceil(rect.bottom + window.scrollY) - y };
-  }, id);
-  const clip = await measure();
+  const measure = () => page.evaluate(({ id, side }) => {
+    const node = document.querySelector(`#${id} [data-variant="${side}"]`);
+    const rect = node.getBoundingClientRect();
+    const bounds = { left: rect.left + window.scrollX, top: rect.top + window.scrollY, right: rect.right + window.scrollX, bottom: rect.bottom + window.scrollY };
+    const x = Math.floor(bounds.left);
+    const y = Math.floor(bounds.top);
+    const contentFits = node.scrollWidth <= node.clientWidth + 1 && node.scrollHeight <= node.clientHeight + 1 && [...node.querySelectorAll('*')].every(child => {
+      const childRect = child.getBoundingClientRect();
+      return childRect.left >= rect.left - 1 && childRect.right <= rect.right + 1 && childRect.top >= rect.top - 1 && childRect.bottom <= rect.bottom + 1;
+    });
+    return { clip: { x, y, width: Math.ceil(bounds.right) - x, height: Math.ceil(bounds.bottom) - y }, bounds, contentFits };
+  }, { id, side });
+  const measured = await measure();
+  const { clip } = measured;
   const shot = await page.cdp('Page.captureScreenshot', { format: 'png', fromSurface: true, captureBeyondViewport: true, clip: { ...clip, scale: 1 } });
   const after = await measure();
-  if (JSON.stringify(clip) !== JSON.stringify(after)) throw new Error(`Screenshot layout shifted for ${id}: ${JSON.stringify({ clip, after })}`);
+  if (JSON.stringify(measured) !== JSON.stringify(after)) throw new Error(`Screenshot layout shifted for ${id}: ${JSON.stringify({ measured, after })}`);
+  if (!measured.contentFits) throw new Error(`Component content exceeds its capture bounds: ${id}/${side}`);
   const bytes = Buffer.from(shot.data, 'base64');
   await writeFile(path.join(root, file), bytes);
-  report.screenshots.push({ file, viewportWidth: await page.evaluate(() => window.innerWidth), ...clip, bytes: bytes.length, sha256: sha(bytes) });
+  report.screenshots.push({ file, caseId: id, variant: side, selector: `#${id} [data-variant="${side}"]`, viewportWidth: await page.evaluate(() => window.innerWidth), ...clip, domBounds: measured.bounds, domBoundsAfterCapture: after.bounds, contentFits: measured.contentFits, bytes: bytes.length, sha256: sha(bytes) });
 }
 
 for (const width of report.viewports) await inspect(width);
@@ -90,6 +100,9 @@ await page.press('loc=css:#name-after', 'Tab');
 report.checks.push(await page.evaluate(() => ({ name: '320px: keyboard Tab reaches recommended form action', passed: document.activeElement?.closest('#form [data-variant="after"]') !== null && document.activeElement?.tagName === 'BUTTON' && getComputedStyle(document.activeElement).outlineStyle === 'solid', detail: document.activeElement?.textContent.trim() })));
 await page.press('loc=css:#form [data-variant="after"] button', 'Shift+Tab');
 report.checks.push(await page.evaluate(() => ({ name: '320px: keyboard Shift+Tab returns to labeled input', passed: document.activeElement?.id === 'name-after', detail: document.activeElement?.id })));
+await page.focus('loc=css:#purposeful-repetition [data-variant="after"] .error-summary a');
+await page.press('loc=css:#purposeful-repetition [data-variant="after"] .error-summary a', 'Enter');
+report.checks.push(await page.evaluate(() => ({ name: '320px: keyboard error summary link focuses the corresponding field', passed: document.activeElement?.id === 'repeat-name-after', detail: document.activeElement?.id })));
 await page.goto(pathToFileURL(path.join(root, 'examples/previews.html')).href);
 await page.evaluate(async () => { await document.fonts.ready; });
 for (const width of report.viewports) {
@@ -112,11 +125,15 @@ for (const width of report.viewports) {
     check('before/after columns follow documented order', comparisons.every(node => getComputedStyle(node).gridTemplateColumns.split(' ').length === expectedColumns), expectedColumns);
     const inputs = [...document.querySelectorAll('input')];
     const descriptions = [...document.querySelectorAll('[aria-describedby]')];
-    check('component previews preserve labels, constraints and visible descriptions', inputs.length === 2 && inputs.every(node => node.labels.length === 1 && node.required && node.maxLength === 40 && node.getAttribute('aria-invalid') === 'true') && descriptions.every(node => node.getAttribute('aria-describedby').split(/\s+/).every(id => document.getElementById(id)?.getBoundingClientRect().height > 0)), descriptions.length);
+    check('component previews preserve labels, constraints and visible descriptions', inputs.length === cases.reduce((count, item) => count + (item.before.match(/<input\b/g) ?? []).length + (item.after.match(/<input\b/g) ?? []).length, 0) && inputs.every(node => node.labels.length === 1 && node.required && node.maxLength === 40 && node.getAttribute('aria-invalid') === 'true') && descriptions.every(node => node.getAttribute('aria-describedby').split(/\s+/).every(id => document.getElementById(id)?.getBoundingClientRect().height > 0)), descriptions.length);
+    const repetition = document.querySelector('#purposeful-repetition [data-variant="after"]');
+    const link = repetition.querySelector('.error-summary a');
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    check('purposeful repeated error keeps summary link and local correction context', target === repetition.querySelector('input') && link.innerText === repetition.querySelector('.error').innerText, target?.id);
     return checks;
   }, { width, cases }));
-  if (width === 1440) for (const item of cases) await capture(item.id, `assets/${item.id}.png`);
-  if (width === 390) for (const item of cases.filter(item => item.overtrimmed)) await capture(item.id, `assets/${item.id}-mobile.png`);
+  if (width === 900) for (const item of cases) for (const side of ['before', 'after']) await capture(item.id, side, `assets/${item.id}-${side}.png`);
+  if (width === 390) for (const item of cases.filter(item => item.overtrimmed || item.decision !== 'reduce')) for (const side of ['before', 'after']) await capture(item.id, side, `assets/${item.id}-mobile-${side}.png`);
 }
 await writeFile(path.join(root, 'examples/render-report.json'), JSON.stringify(report, null, 2) + '\n', 'utf8');
 const failures = report.checks.filter(check => !check.passed);

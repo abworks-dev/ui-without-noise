@@ -1,8 +1,8 @@
 {
   "evidence": "browser-rendered synthetic editorial examples; not an agent benchmark",
   "captureMethod": "CDP Page.captureScreenshot, CSS document coordinates, captureBeyondViewport",
-  "screenshotSource": "examples/previews.html; before/after components only; no teaching chrome",
-  "generatedAt": "2026-11-08T14:15:47.899Z",
+  "screenshotSource": "examples/previews.html; each before/after component captured separately; no teaching chrome",
+  "generatedAt": "2026-11-08T15:44:07.010Z",
   "browser": {
     "engine": "Chromium",
     "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
@@ -10,147 +10,1110 @@
   "viewports": [
     1440,
     1024,
+    900,
     390,
     320
   ],
   "inputs": {
-    "examples/cases.json": "634eeff7ebbc3096432bdd82d9965bec96ec049301658806d4def0cb4bca7791",
-    "examples/styles.css": "4c8e9a2353987319f82ce4747bb2ba88c39870abdef09a8be4de6d22987d0a8c",
-    "examples/index.html": "651556a36cab78b3f7034ce7692af11a39ec7cd152dba05de8fcbf7e6074ffc8",
-    "examples/previews.html": "24010e91e6fac0f89261ebcf782ab5d8d1bc28fc903e97c5cd19be43f928644a",
-    "scripts/build-examples.mjs": "a9cb0c132edbf63bf8b28d7bef28ed7e24392e6ca1c211388d1d55f012ae7653",
-    "scripts/capture.mjs": "70adc2778353223a4485b5a258cb1541438dfd8cd17a4ae21ba53deec61b21a8"
+    "examples/cases.json": "f6341ac0e3a3d7ab94f7af06d34a6d8e8c64ffe20592ecc9e6a573e20be2378d",
+    "examples/styles.css": "0a5fb4cf6ad3d2578c81e3f83874026cf504764eed782a484e99a542ca5dfdfb",
+    "examples/index.html": "6a120177e7fc3a6066e7d72293d2b461b5e3aa90a83a830f6ad61b41bfe11623",
+    "examples/previews.html": "cad3127e348c8ecea5043dcbc0e39bbaa98b7ae568993bd79d5de2b4db0c0b4e",
+    "scripts/build-examples.mjs": "59f252689f1696acc31ac35c7efbd14d00af464714077a46e12bb3f9e66957c5",
+    "scripts/capture.mjs": "59c939038f0020fa5fae2028327b3e5a04d7a003a004b10233fb3faae5723fd5"
   },
   "screenshots": [
     {
-      "file": "assets/empty-state.png",
-      "viewportWidth": 1440,
-      "x": 36,
+      "file": "assets/empty-state-before.png",
+      "caseId": "empty-state",
+      "variant": "before",
+      "selector": "#empty-state [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
       "y": 76,
-      "width": 1353,
-      "height": 507,
-      "bytes": 29694,
-      "sha256": "942d3e908d6c5165a71c99a80eba2528657e4f864f308be2543d304a04d65892"
+      "width": 410,
+      "height": 528,
+      "domBounds": {
+        "left": 24,
+        "top": 76,
+        "right": 433.5,
+        "bottom": 603.78125
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 76,
+        "right": 433.5,
+        "bottom": 603.78125
+      },
+      "contentFits": true,
+      "bytes": 20229,
+      "sha256": "123ac105d57dd1a752fdd10707f61eaa5a9add9b637c18bb06c89ed74b901546"
     },
     {
-      "file": "assets/section-heading.png",
-      "viewportWidth": 1440,
-      "x": 36,
-      "y": 606,
-      "width": 1353,
-      "height": 408,
-      "bytes": 30430,
-      "sha256": "eee6298ac1b2f66bb39621ea5a24d6a550927db605b84658b47c374efa4d9796"
+      "file": "assets/empty-state-after.png",
+      "caseId": "empty-state",
+      "variant": "after",
+      "selector": "#empty-state [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 76,
+      "width": 410,
+      "height": 270,
+      "domBounds": {
+        "left": 451.5,
+        "top": 76,
+        "right": 861,
+        "bottom": 345.390625
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 76,
+        "right": 861,
+        "bottom": 345.390625
+      },
+      "contentFits": true,
+      "bytes": 7853,
+      "sha256": "2dd8a7644b4023fa26bd0460072e20771b385fe73b8898ec2248a7a6f4d13502"
     },
     {
-      "file": "assets/form.png",
-      "viewportWidth": 1440,
-      "x": 36,
-      "y": 1037,
-      "width": 1353,
-      "height": 447,
-      "bytes": 26045,
-      "sha256": "e2832bf9e435f3236050eb1b54cd976eb491849e81210890cf82eee899842fd3"
+      "file": "assets/section-heading-before.png",
+      "caseId": "section-heading",
+      "variant": "before",
+      "selector": "#section-heading [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 627,
+      "width": 410,
+      "height": 409,
+      "domBounds": {
+        "left": 24,
+        "top": 627.78125,
+        "right": 433.5,
+        "bottom": 1035.046875
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 627.78125,
+        "right": 433.5,
+        "bottom": 1035.046875
+      },
+      "contentFits": true,
+      "bytes": 18355,
+      "sha256": "638926c0d17cbf5bcf7a626c53980864aa4cf92b9a953e70eea570c00180a8bf"
     },
     {
-      "file": "assets/permission.png",
-      "viewportWidth": 1440,
-      "x": 36,
-      "y": 1507,
-      "width": 1353,
+      "file": "assets/section-heading-after.png",
+      "caseId": "section-heading",
+      "variant": "after",
+      "selector": "#section-heading [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 627,
+      "width": 410,
+      "height": 277,
+      "domBounds": {
+        "left": 451.5,
+        "top": 627.78125,
+        "right": 861,
+        "bottom": 903.375
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 627.78125,
+        "right": 861,
+        "bottom": 903.375
+      },
+      "contentFits": true,
+      "bytes": 10278,
+      "sha256": "68a2b71aa3caa0e9fa07a2702e45a98901d7b859721b82ab30ba57c07b5844b5"
+    },
+    {
+      "file": "assets/form-before.png",
+      "caseId": "form",
+      "variant": "before",
+      "selector": "#form [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 1059,
+      "width": 410,
+      "height": 446,
+      "domBounds": {
+        "left": 24,
+        "top": 1059.046875,
+        "right": 433.5,
+        "bottom": 1504.546875
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 1059.046875,
+        "right": 433.5,
+        "bottom": 1504.546875
+      },
+      "contentFits": true,
+      "bytes": 16719,
+      "sha256": "1ef3ab6a2f206852a296743e04656e624e5952d01e8c8fa4a8b4e9d26243e5ff"
+    },
+    {
+      "file": "assets/form-after.png",
+      "caseId": "form",
+      "variant": "after",
+      "selector": "#form [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 1059,
+      "width": 410,
+      "height": 308,
+      "domBounds": {
+        "left": 451.5,
+        "top": 1059.046875,
+        "right": 861,
+        "bottom": 1366.21875
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 1059.046875,
+        "right": 861,
+        "bottom": 1366.21875
+      },
+      "contentFits": true,
+      "bytes": 9980,
+      "sha256": "a2f1da68a5c490fd8ad57136ee42c3d14d7eb2a50c7877be3b8de782ae9d868d"
+    },
+    {
+      "file": "assets/permission-before.png",
+      "caseId": "permission",
+      "variant": "before",
+      "selector": "#permission [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 1528,
+      "width": 410,
       "height": 337,
-      "bytes": 21559,
-      "sha256": "e110964362b236ac29cddc7affbedfa549c7b6afa85296ed02830abe61fe0cc4"
+      "domBounds": {
+        "left": 24,
+        "top": 1528.546875,
+        "right": 433.5,
+        "bottom": 1864.75
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 1528.546875,
+        "right": 433.5,
+        "bottom": 1864.75
+      },
+      "contentFits": true,
+      "bytes": 14937,
+      "sha256": "783f3df59f88e4e703a2200b3b1d8b2dfb53baec28f30c8060496f626db2bfa1"
     },
     {
-      "file": "assets/unknown-result.png",
-      "viewportWidth": 1440,
-      "x": 36,
-      "y": 1867,
-      "width": 1353,
-      "height": 343,
-      "bytes": 20904,
-      "sha256": "df75fffacb6561ad8780c6e1a0d0646647f8e6256c152a3af07ed28d7c17d79d"
+      "file": "assets/permission-after.png",
+      "caseId": "permission",
+      "variant": "after",
+      "selector": "#permission [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 1528,
+      "width": 410,
+      "height": 190,
+      "domBounds": {
+        "left": 451.5,
+        "top": 1528.546875,
+        "right": 861,
+        "bottom": 1717.09375
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 1528.546875,
+        "right": 861,
+        "bottom": 1717.09375
+      },
+      "contentFits": true,
+      "bytes": 7632,
+      "sha256": "db21604256fde6c518b6234e33313340d7e2dd998805f52d83fd29978002e004"
     },
     {
-      "file": "assets/destructive-action.png",
-      "viewportWidth": 1440,
-      "x": 36,
-      "y": 2233,
-      "width": 1353,
-      "height": 365,
-      "bytes": 28124,
-      "sha256": "6d2f3dbd527b6eba589710778cc93e2b9ab394e22feacb051d42651fecaa9dcd"
+      "file": "assets/unknown-result-before.png",
+      "caseId": "unknown-result",
+      "variant": "before",
+      "selector": "#unknown-result [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 1888,
+      "width": 410,
+      "height": 344,
+      "domBounds": {
+        "left": 24,
+        "top": 1888.75,
+        "right": 433.5,
+        "bottom": 2231.3125
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 1888.75,
+        "right": 433.5,
+        "bottom": 2231.3125
+      },
+      "contentFits": true,
+      "bytes": 14628,
+      "sha256": "10e70de7e48e8ee43e4d11dc529db97c427ae648805fe08bf2c06346f70a7057"
     },
     {
-      "file": "assets/filtered-results.png",
-      "viewportWidth": 1440,
-      "x": 36,
-      "y": 2621,
-      "width": 1353,
-      "height": 450,
-      "bytes": 30240,
-      "sha256": "da041f13af235a97b01a82ee7718553831be2b8e41afc6d61d70de60507509c4"
+      "file": "assets/unknown-result-after.png",
+      "caseId": "unknown-result",
+      "variant": "after",
+      "selector": "#unknown-result [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 1888,
+      "width": 410,
+      "height": 218,
+      "domBounds": {
+        "left": 451.5,
+        "top": 1888.75,
+        "right": 861,
+        "bottom": 2105.046875
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 1888.75,
+        "right": 861,
+        "bottom": 2105.046875
+      },
+      "contentFits": true,
+      "bytes": 6546,
+      "sha256": "181ab5563f5eb8d7e824be098a8f0b2bc36c2d1184f8df751d46579c26992371"
     },
     {
-      "file": "assets/favorites.png",
-      "viewportWidth": 1440,
-      "x": 36,
-      "y": 3094,
-      "width": 1353,
+      "file": "assets/destructive-action-before.png",
+      "caseId": "destructive-action",
+      "variant": "before",
+      "selector": "#destructive-action [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 2255,
+      "width": 410,
+      "height": 393,
+      "domBounds": {
+        "left": 24,
+        "top": 2255.3125,
+        "right": 433.5,
+        "bottom": 2647.078125
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 2255.3125,
+        "right": 433.5,
+        "bottom": 2647.078125
+      },
+      "contentFits": true,
+      "bytes": 17344,
+      "sha256": "5f6afb7b53016c2987ff5727ed5f4f722c7175182882336cfe2b24d5ad7b5cae"
+    },
+    {
+      "file": "assets/destructive-action-after.png",
+      "caseId": "destructive-action",
+      "variant": "after",
+      "selector": "#destructive-action [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 2255,
+      "width": 410,
+      "height": 225,
+      "domBounds": {
+        "left": 451.5,
+        "top": 2255.3125,
+        "right": 861,
+        "bottom": 2479.609375
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 2255.3125,
+        "right": 861,
+        "bottom": 2479.609375
+      },
+      "contentFits": true,
+      "bytes": 9498,
+      "sha256": "046fbcfe50d5e8ae9bb20da20e06bcc92b1bc3268d47ce8acb3deee27caf3749"
+    },
+    {
+      "file": "assets/filtered-results-before.png",
+      "caseId": "filtered-results",
+      "variant": "before",
+      "selector": "#filtered-results [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 2671,
+      "width": 410,
+      "height": 449,
+      "domBounds": {
+        "left": 24,
+        "top": 2671.078125,
+        "right": 433.5,
+        "bottom": 3119.234375
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 2671.078125,
+        "right": 433.5,
+        "bottom": 3119.234375
+      },
+      "contentFits": true,
+      "bytes": 18637,
+      "sha256": "eec35cb1563a8f2ee45e9b97ab629bb94bae91525191619fec4eb58b8724dde2"
+    },
+    {
+      "file": "assets/filtered-results-after.png",
+      "caseId": "filtered-results",
+      "variant": "after",
+      "selector": "#filtered-results [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 2671,
+      "width": 410,
+      "height": 270,
+      "domBounds": {
+        "left": 451.5,
+        "top": 2671.078125,
+        "right": 861,
+        "bottom": 2940.46875
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 2671.078125,
+        "right": 861,
+        "bottom": 2940.46875
+      },
+      "contentFits": true,
+      "bytes": 9973,
+      "sha256": "c5d1ec47c341a49b0ac4062a7802b560881dfed0c25602355bd056433f01be4d"
+    },
+    {
+      "file": "assets/favorites-before.png",
+      "caseId": "favorites",
+      "variant": "before",
+      "selector": "#favorites [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 3143,
+      "width": 410,
       "height": 472,
-      "bytes": 33260,
-      "sha256": "7afcac3c4bba8949f36f2cd6d3220cdd5a7302d9d0199e23d9f8b3cdc0b3c0d1"
+      "domBounds": {
+        "left": 24,
+        "top": 3143.234375,
+        "right": 433.5,
+        "bottom": 3614.484375
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 3143.234375,
+        "right": 433.5,
+        "bottom": 3614.484375
+      },
+      "contentFits": true,
+      "bytes": 20199,
+      "sha256": "85b99246124cd2831be46f3dadac1179b1b5275a074e90837aebd83f94d5c3ff"
     },
     {
-      "file": "assets/quiet-notifications.png",
-      "viewportWidth": 1440,
-      "x": 36,
-      "y": 3589,
-      "width": 1353,
+      "file": "assets/favorites-after.png",
+      "caseId": "favorites",
+      "variant": "after",
+      "selector": "#favorites [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 3143,
+      "width": 410,
+      "height": 293,
+      "domBounds": {
+        "left": 451.5,
+        "top": 3143.234375,
+        "right": 861,
+        "bottom": 3435.71875
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 3143.234375,
+        "right": 861,
+        "bottom": 3435.71875
+      },
+      "contentFits": true,
+      "bytes": 10947,
+      "sha256": "869ac40a13bc80e901e11b474251b34c678c654a9f885faf117cdca854924287"
+    },
+    {
+      "file": "assets/quiet-notifications-before.png",
+      "caseId": "quiet-notifications",
+      "variant": "before",
+      "selector": "#quiet-notifications [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 3638,
+      "width": 410,
       "height": 354,
-      "bytes": 21097,
-      "sha256": "a4adb74f81e2b12b0f8b1f9b9ffde4da4cd5ed3a4a692f188058d467a5f4ca16"
+      "domBounds": {
+        "left": 24,
+        "top": 3638.484375,
+        "right": 433.5,
+        "bottom": 3991.546875
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 3638.484375,
+        "right": 433.5,
+        "bottom": 3991.546875
+      },
+      "contentFits": true,
+      "bytes": 13972,
+      "sha256": "4c8a862978deff066363266f6456ad58b8c78083d855f0d716af218ff10b7b34"
     },
     {
-      "file": "assets/empty-state-mobile.png",
+      "file": "assets/quiet-notifications-after.png",
+      "caseId": "quiet-notifications",
+      "variant": "after",
+      "selector": "#quiet-notifications [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 3638,
+      "width": 410,
+      "height": 187,
+      "domBounds": {
+        "left": 451.5,
+        "top": 3638.484375,
+        "right": 861,
+        "bottom": 3824.78125
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 3638.484375,
+        "right": 861,
+        "bottom": 3824.78125
+      },
+      "contentFits": true,
+      "bytes": 5754,
+      "sha256": "352babf117cc4bbee7526847e2bca6731b938341aecd5d21ae8b29acc5e995a0"
+    },
+    {
+      "file": "assets/already-sufficient-before.png",
+      "caseId": "already-sufficient",
+      "variant": "before",
+      "selector": "#already-sufficient [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 4015,
+      "width": 410,
+      "height": 187,
+      "domBounds": {
+        "left": 24,
+        "top": 4015.546875,
+        "right": 433.5,
+        "bottom": 4201.84375
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 4015.546875,
+        "right": 433.5,
+        "bottom": 4201.84375
+      },
+      "contentFits": true,
+      "bytes": 5711,
+      "sha256": "9419dc9bc70910c4e17777ef726110b86cdec349cbce0217fa08527fabd8784c"
+    },
+    {
+      "file": "assets/already-sufficient-after.png",
+      "caseId": "already-sufficient",
+      "variant": "after",
+      "selector": "#already-sufficient [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 4015,
+      "width": 410,
+      "height": 187,
+      "domBounds": {
+        "left": 451.5,
+        "top": 4015.546875,
+        "right": 861,
+        "bottom": 4201.84375
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 4015.546875,
+        "right": 861,
+        "bottom": 4201.84375
+      },
+      "contentFits": true,
+      "bytes": 5756,
+      "sha256": "0a143a620a351b26ca2eccf6ba636a9cb8b1a9a1410d6e431af18eb3112e9ffa"
+    },
+    {
+      "file": "assets/add-context-before.png",
+      "caseId": "add-context",
+      "variant": "before",
+      "selector": "#add-context [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 4225,
+      "width": 410,
+      "height": 232,
+      "domBounds": {
+        "left": 24,
+        "top": 4225.84375,
+        "right": 433.5,
+        "bottom": 4456.140625
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 4225.84375,
+        "right": 433.5,
+        "bottom": 4456.140625
+      },
+      "contentFits": true,
+      "bytes": 6071,
+      "sha256": "08c1786049d060fc47d453eeae6c368910315e212f10d3d2301bd5988f341357"
+    },
+    {
+      "file": "assets/add-context-after.png",
+      "caseId": "add-context",
+      "variant": "after",
+      "selector": "#add-context [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 4225,
+      "width": 410,
+      "height": 271,
+      "domBounds": {
+        "left": 451.5,
+        "top": 4225.84375,
+        "right": 861,
+        "bottom": 4495.234375
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 4225.84375,
+        "right": 861,
+        "bottom": 4495.234375
+      },
+      "contentFits": true,
+      "bytes": 7851,
+      "sha256": "8924dfe44425d97f92200ed2cfe1861846127f99e660fda0eff737b92f20a241"
+    },
+    {
+      "file": "assets/guided-start-before.png",
+      "caseId": "guided-start",
+      "variant": "before",
+      "selector": "#guided-start [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 4519,
+      "width": 410,
+      "height": 231,
+      "domBounds": {
+        "left": 24,
+        "top": 4519.234375,
+        "right": 433.5,
+        "bottom": 4749.53125
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 4519.234375,
+        "right": 433.5,
+        "bottom": 4749.53125
+      },
+      "contentFits": true,
+      "bytes": 7736,
+      "sha256": "1f6f5b9ae6799173be7daa0d9238e216d3b117087eb2142477d21bacc9578ce4"
+    },
+    {
+      "file": "assets/guided-start-after.png",
+      "caseId": "guided-start",
+      "variant": "after",
+      "selector": "#guided-start [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 4519,
+      "width": 410,
+      "height": 327,
+      "domBounds": {
+        "left": 451.5,
+        "top": 4519.234375,
+        "right": 861,
+        "bottom": 4845.53125
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 4519.234375,
+        "right": 861,
+        "bottom": 4845.53125
+      },
+      "contentFits": true,
+      "bytes": 12538,
+      "sha256": "fbc415006aef590ccb5e334bf585f3ee0d17eb0d03909bbc1fa607ae09a56eed"
+    },
+    {
+      "file": "assets/purposeful-repetition-before.png",
+      "caseId": "purposeful-repetition",
+      "variant": "before",
+      "selector": "#purposeful-repetition [data-variant=\"before\"]",
+      "viewportWidth": 900,
+      "x": 24,
+      "y": 4869,
+      "width": 410,
+      "height": 402,
+      "domBounds": {
+        "left": 24,
+        "top": 4869.53125,
+        "right": 433.5,
+        "bottom": 5270.640625
+      },
+      "domBoundsAfterCapture": {
+        "left": 24,
+        "top": 4869.53125,
+        "right": 433.5,
+        "bottom": 5270.640625
+      },
+      "contentFits": true,
+      "bytes": 13605,
+      "sha256": "eef4321ad10fb7716fc9774e8fa8e552cb672a8d225225557733f0b7cc9f18a4"
+    },
+    {
+      "file": "assets/purposeful-repetition-after.png",
+      "caseId": "purposeful-repetition",
+      "variant": "after",
+      "selector": "#purposeful-repetition [data-variant=\"after\"]",
+      "viewportWidth": 900,
+      "x": 451,
+      "y": 4869,
+      "width": 410,
+      "height": 402,
+      "domBounds": {
+        "left": 451.5,
+        "top": 4869.53125,
+        "right": 861,
+        "bottom": 5270.640625
+      },
+      "domBoundsAfterCapture": {
+        "left": 451.5,
+        "top": 4869.53125,
+        "right": 861,
+        "bottom": 5270.640625
+      },
+      "contentFits": true,
+      "bytes": 13742,
+      "sha256": "1f52282fba68c3c526bf89ae6ad3bff69ab496d4379c197be4dd387bf0b13206"
+    },
+    {
+      "file": "assets/empty-state-mobile-before.png",
+      "caseId": "empty-state",
+      "variant": "before",
+      "selector": "#empty-state [data-variant=\"before\"]",
       "viewportWidth": 390,
       "x": 12,
       "y": 52,
       "width": 351,
-      "height": 794,
-      "bytes": 27575,
-      "sha256": "036e5deb991b8892199d7431f4cddeacc3c549cccdaeccb7759450680e44164e"
+      "height": 520,
+      "domBounds": {
+        "left": 12,
+        "top": 52,
+        "right": 363,
+        "bottom": 571.78125
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 52,
+        "right": 363,
+        "bottom": 571.78125
+      },
+      "contentFits": true,
+      "bytes": 19887,
+      "sha256": "bba5e148f998d4ab167eb60b84aa8e219b21330c7a85eb183ca07302cb57d61f"
     },
     {
-      "file": "assets/filtered-results-mobile.png",
+      "file": "assets/empty-state-mobile-after.png",
+      "caseId": "empty-state",
+      "variant": "after",
+      "selector": "#empty-state [data-variant=\"after\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 583,
+      "width": 351,
+      "height": 263,
+      "domBounds": {
+        "left": 12,
+        "top": 583.78125,
+        "right": 363,
+        "bottom": 845.171875
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 583.78125,
+        "right": 363,
+        "bottom": 845.171875
+      },
+      "contentFits": true,
+      "bytes": 7780,
+      "sha256": "a615a3b44c77d54f332976be8b70bce26e562ed250698a66d48c454550d07303"
+    },
+    {
+      "file": "assets/filtered-results-mobile-before.png",
+      "caseId": "filtered-results",
+      "variant": "before",
+      "selector": "#filtered-results [data-variant=\"before\"]",
       "viewportWidth": 390,
       "x": 12,
       "y": 4153,
       "width": 351,
-      "height": 715,
-      "bytes": 28098,
-      "sha256": "a917a52389ac3c1d8a084b963d666775b8064fc15b40777f1a81f5964c0977c4"
+      "height": 441,
+      "domBounds": {
+        "left": 12,
+        "top": 4153.5625,
+        "right": 363,
+        "bottom": 4593.71875
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 4153.5625,
+        "right": 363,
+        "bottom": 4593.71875
+      },
+      "contentFits": true,
+      "bytes": 18388,
+      "sha256": "45835f8d994726ed800bb49675fa21e825d9ab647beb3ea67a6588714e3742ad"
     },
     {
-      "file": "assets/favorites-mobile.png",
+      "file": "assets/filtered-results-mobile-after.png",
+      "caseId": "filtered-results",
+      "variant": "after",
+      "selector": "#filtered-results [data-variant=\"after\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 4605,
+      "width": 351,
+      "height": 263,
+      "domBounds": {
+        "left": 12,
+        "top": 4605.71875,
+        "right": 363,
+        "bottom": 4867.109375
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 4605.71875,
+        "right": 363,
+        "bottom": 4867.109375
+      },
+      "contentFits": true,
+      "bytes": 9860,
+      "sha256": "9a27451539043de33dbc84dad32f0ced482ea5eed737b78f8e237f22af562837"
+    },
+    {
+      "file": "assets/favorites-mobile-before.png",
+      "caseId": "favorites",
+      "variant": "before",
+      "selector": "#favorites [data-variant=\"before\"]",
       "viewportWidth": 390,
       "x": 12,
       "y": 4891,
       "width": 351,
-      "height": 760,
-      "bytes": 30505,
-      "sha256": "2ea4a1e10716a0e319101fb673ca6fdd0766f92ca74498d0fc312edbf7b4806c"
+      "height": 464,
+      "domBounds": {
+        "left": 12,
+        "top": 4891.109375,
+        "right": 363,
+        "bottom": 5354.359375
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 4891.109375,
+        "right": 363,
+        "bottom": 5354.359375
+      },
+      "contentFits": true,
+      "bytes": 19886,
+      "sha256": "4b261d87d49747f60b8ec4269ee095a655dcdb9005982c5909fad241ca6165c3"
     },
     {
-      "file": "assets/quiet-notifications-mobile.png",
+      "file": "assets/favorites-mobile-after.png",
+      "caseId": "favorites",
+      "variant": "after",
+      "selector": "#favorites [data-variant=\"after\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 5366,
+      "width": 351,
+      "height": 285,
+      "domBounds": {
+        "left": 12,
+        "top": 5366.359375,
+        "right": 363,
+        "bottom": 5650.84375
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 5366.359375,
+        "right": 363,
+        "bottom": 5650.84375
+      },
+      "contentFits": true,
+      "bytes": 10752,
+      "sha256": "02b8f8e205dd8e6aac2db7e8add61ee0464969ea838b1fd75a6c80ecac740962"
+    },
+    {
+      "file": "assets/quiet-notifications-mobile-before.png",
+      "caseId": "quiet-notifications",
+      "variant": "before",
+      "selector": "#quiet-notifications [data-variant=\"before\"]",
       "viewportWidth": 390,
       "x": 12,
       "y": 5674,
       "width": 351,
-      "height": 537,
-      "bytes": 19250,
-      "sha256": "e3e7d25b95f36095aa2719a3d0e8dc1b208780acd0f439b6ff970743f01aec8d"
+      "height": 346,
+      "domBounds": {
+        "left": 12,
+        "top": 5674.84375,
+        "right": 363,
+        "bottom": 6019.90625
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 5674.84375,
+        "right": 363,
+        "bottom": 6019.90625
+      },
+      "contentFits": true,
+      "bytes": 13749,
+      "sha256": "3d410fcf71057d3a2b34b1532c742a762e1deafd35256dfe1c3d266fe20615b4"
+    },
+    {
+      "file": "assets/quiet-notifications-mobile-after.png",
+      "caseId": "quiet-notifications",
+      "variant": "after",
+      "selector": "#quiet-notifications [data-variant=\"after\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 6031,
+      "width": 351,
+      "height": 180,
+      "domBounds": {
+        "left": 12,
+        "top": 6031.90625,
+        "right": 363,
+        "bottom": 6210.203125
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 6031.90625,
+        "right": 363,
+        "bottom": 6210.203125
+      },
+      "contentFits": true,
+      "bytes": 5604,
+      "sha256": "80b121ef9d49fd471d8c1b50a3963ed724e7b8dcbee6f5d2d3187ea9283fc8a6"
+    },
+    {
+      "file": "assets/already-sufficient-mobile-before.png",
+      "caseId": "already-sufficient",
+      "variant": "before",
+      "selector": "#already-sufficient [data-variant=\"before\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 6234,
+      "width": 351,
+      "height": 179,
+      "domBounds": {
+        "left": 12,
+        "top": 6234.203125,
+        "right": 363,
+        "bottom": 6412.5
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 6234.203125,
+        "right": 363,
+        "bottom": 6412.5
+      },
+      "contentFits": true,
+      "bytes": 5597,
+      "sha256": "7979a2599aa37260e2521bad39b2e4d0d64d70b8d9c75205c173ec30253b561a"
+    },
+    {
+      "file": "assets/already-sufficient-mobile-after.png",
+      "caseId": "already-sufficient",
+      "variant": "after",
+      "selector": "#already-sufficient [data-variant=\"after\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 6424,
+      "width": 351,
+      "height": 179,
+      "domBounds": {
+        "left": 12,
+        "top": 6424.5,
+        "right": 363,
+        "bottom": 6602.796875
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 6424.5,
+        "right": 363,
+        "bottom": 6602.796875
+      },
+      "contentFits": true,
+      "bytes": 5599,
+      "sha256": "4c28af54bd255296b4c801d332d56553c532d66de69a62169168b0208b791a94"
+    },
+    {
+      "file": "assets/add-context-mobile-before.png",
+      "caseId": "add-context",
+      "variant": "before",
+      "selector": "#add-context [data-variant=\"before\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 6626,
+      "width": 351,
+      "height": 224,
+      "domBounds": {
+        "left": 12,
+        "top": 6626.796875,
+        "right": 363,
+        "bottom": 6849.09375
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 6626.796875,
+        "right": 363,
+        "bottom": 6849.09375
+      },
+      "contentFits": true,
+      "bytes": 5977,
+      "sha256": "76b5ef73cc9b4430b51ef7ec9e3c0ad21baf5d9645475a15b083cc040d0afa38"
+    },
+    {
+      "file": "assets/add-context-mobile-after.png",
+      "caseId": "add-context",
+      "variant": "after",
+      "selector": "#add-context [data-variant=\"after\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 6861,
+      "width": 351,
+      "height": 262,
+      "domBounds": {
+        "left": 12,
+        "top": 6861.09375,
+        "right": 363,
+        "bottom": 7122.484375
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 6861.09375,
+        "right": 363,
+        "bottom": 7122.484375
+      },
+      "contentFits": true,
+      "bytes": 7766,
+      "sha256": "0007c9bb22961a1a2112de595af4ad0945c41edaae23c622daf8ed27d1b3e38e"
+    },
+    {
+      "file": "assets/guided-start-mobile-before.png",
+      "caseId": "guided-start",
+      "variant": "before",
+      "selector": "#guided-start [data-variant=\"before\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 7146,
+      "width": 351,
+      "height": 223,
+      "domBounds": {
+        "left": 12,
+        "top": 7146.484375,
+        "right": 363,
+        "bottom": 7368.78125
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 7146.484375,
+        "right": 363,
+        "bottom": 7368.78125
+      },
+      "contentFits": true,
+      "bytes": 7625,
+      "sha256": "ec061f0662d4717699f5706df8b1d0587aacb07855baca04d08a93537459a040"
+    },
+    {
+      "file": "assets/guided-start-mobile-after.png",
+      "caseId": "guided-start",
+      "variant": "after",
+      "selector": "#guided-start [data-variant=\"after\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 7380,
+      "width": 351,
+      "height": 344,
+      "domBounds": {
+        "left": 12,
+        "top": 7380.78125,
+        "right": 363,
+        "bottom": 7723.828125
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 7380.78125,
+        "right": 363,
+        "bottom": 7723.828125
+      },
+      "contentFits": true,
+      "bytes": 12403,
+      "sha256": "971a356f4ec2733718c106ade6094f221a5b10354e330371fe952587384709a4"
+    },
+    {
+      "file": "assets/purposeful-repetition-mobile-before.png",
+      "caseId": "purposeful-repetition",
+      "variant": "before",
+      "selector": "#purposeful-repetition [data-variant=\"before\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 7747,
+      "width": 351,
+      "height": 394,
+      "domBounds": {
+        "left": 12,
+        "top": 7747.828125,
+        "right": 363,
+        "bottom": 8140.9375
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 7747.828125,
+        "right": 363,
+        "bottom": 8140.9375
+      },
+      "contentFits": true,
+      "bytes": 13391,
+      "sha256": "16bfe21323ef4e487a3d8011261bba1a65404add143fa8e1e47edf19882f477a"
+    },
+    {
+      "file": "assets/purposeful-repetition-mobile-after.png",
+      "caseId": "purposeful-repetition",
+      "variant": "after",
+      "selector": "#purposeful-repetition [data-variant=\"after\"]",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 8152,
+      "width": 351,
+      "height": 395,
+      "domBounds": {
+        "left": 12,
+        "top": 8152.9375,
+        "right": 363,
+        "bottom": 8546.046875
+      },
+      "domBoundsAfterCapture": {
+        "left": 12,
+        "top": 8152.9375,
+        "right": 363,
+        "bottom": 8546.046875
+      },
+      "contentFits": true,
+      "bytes": 13400,
+      "sha256": "9bdd01909ad5be949ce600fd26894147a47366bdee5cdbc1dc6ef960cae427bf"
     }
   ],
   "checks": [
@@ -170,12 +1133,12 @@
     {
       "name": "1440px: all displayed buttons have text names",
       "passed": true,
-      "detail": 24
+      "detail": 30
     },
     {
       "name": "1440px: inputs retain labels and actual constraints",
       "passed": true,
-      "detail": 2
+      "detail": 4
     },
     {
       "name": "1440px: description associations resolve",
@@ -191,6 +1154,25 @@
       "name": "1440px: necessary facts visible in both recommended variants",
       "passed": true,
       "detail": []
+    },
+    {
+      "name": "1440px: editorial labels reflect actual decisions, not universal reduction",
+      "passed": true,
+      "detail": [
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "keep",
+        "add",
+        "expand",
+        "retain"
+      ]
     },
     {
       "name": "1440px: useful learning cues visible in recommended variants",
@@ -240,12 +1222,12 @@
     {
       "name": "1024px: all displayed buttons have text names",
       "passed": true,
-      "detail": 24
+      "detail": 30
     },
     {
       "name": "1024px: inputs retain labels and actual constraints",
       "passed": true,
-      "detail": 2
+      "detail": 4
     },
     {
       "name": "1024px: description associations resolve",
@@ -261,6 +1243,25 @@
       "name": "1024px: necessary facts visible in both recommended variants",
       "passed": true,
       "detail": []
+    },
+    {
+      "name": "1024px: editorial labels reflect actual decisions, not universal reduction",
+      "passed": true,
+      "detail": [
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "keep",
+        "add",
+        "expand",
+        "retain"
+      ]
     },
     {
       "name": "1024px: useful learning cues visible in recommended variants",
@@ -295,6 +1296,95 @@
       "detail": null
     },
     {
+      "name": "900px: no document horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 885,
+        "width": 900
+      }
+    },
+    {
+      "name": "900px: all comparison containers fit",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "900px: all displayed buttons have text names",
+      "passed": true,
+      "detail": 30
+    },
+    {
+      "name": "900px: inputs retain labels and actual constraints",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "900px: description associations resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "900px: disabled reasons remain visible and readable",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "900px: necessary facts visible in both recommended variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "900px: editorial labels reflect actual decisions, not universal reduction",
+      "passed": true,
+      "detail": [
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "keep",
+        "add",
+        "expand",
+        "retain"
+      ]
+    },
+    {
+      "name": "900px: useful learning cues visible in recommended variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "900px: overtrimmed variants explicitly labeled as counterexamples",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "900px: three-way comparisons stack when space is insufficient",
+      "passed": true,
+      "detail": {
+        "columns": 1
+      }
+    },
+    {
+      "name": "900px: necessary learning copy not reduced to tiny text",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "900px: same styling, no hidden-copy tricks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "900px: demo has no scripts, external resources or persistence handlers",
+      "passed": true,
+      "detail": null
+    },
+    {
       "name": "390px: no document horizontal overflow",
       "passed": true,
       "detail": {
@@ -310,12 +1400,12 @@
     {
       "name": "390px: all displayed buttons have text names",
       "passed": true,
-      "detail": 24
+      "detail": 30
     },
     {
       "name": "390px: inputs retain labels and actual constraints",
       "passed": true,
-      "detail": 2
+      "detail": 4
     },
     {
       "name": "390px: description associations resolve",
@@ -331,6 +1421,25 @@
       "name": "390px: necessary facts visible in both recommended variants",
       "passed": true,
       "detail": []
+    },
+    {
+      "name": "390px: editorial labels reflect actual decisions, not universal reduction",
+      "passed": true,
+      "detail": [
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "keep",
+        "add",
+        "expand",
+        "retain"
+      ]
     },
     {
       "name": "390px: useful learning cues visible in recommended variants",
@@ -380,12 +1489,12 @@
     {
       "name": "320px: all displayed buttons have text names",
       "passed": true,
-      "detail": 24
+      "detail": 30
     },
     {
       "name": "320px: inputs retain labels and actual constraints",
       "passed": true,
-      "detail": 2
+      "detail": 4
     },
     {
       "name": "320px: description associations resolve",
@@ -401,6 +1510,25 @@
       "name": "320px: necessary facts visible in both recommended variants",
       "passed": true,
       "detail": []
+    },
+    {
+      "name": "320px: editorial labels reflect actual decisions, not universal reduction",
+      "passed": true,
+      "detail": [
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "reduce",
+        "keep",
+        "add",
+        "expand",
+        "retain"
+      ]
     },
     {
       "name": "320px: useful learning cues visible in recommended variants",
@@ -445,9 +1573,14 @@
       "detail": "name-after"
     },
     {
+      "name": "320px: keyboard error summary link focuses the corresponding field",
+      "passed": true,
+      "detail": "repeat-name-after"
+    },
+    {
       "name": "1440px preview: only before/after components, without teaching chrome",
       "passed": true,
-      "detail": 9
+      "detail": 13
     },
     {
       "name": "1440px preview: component previews retain necessary facts and learning cues",
@@ -467,12 +1600,17 @@
     {
       "name": "1440px preview: component previews preserve labels, constraints and visible descriptions",
       "passed": true,
-      "detail": 4
+      "detail": 6
+    },
+    {
+      "name": "1440px preview: purposeful repeated error keeps summary link and local correction context",
+      "passed": true,
+      "detail": "repeat-name-after"
     },
     {
       "name": "1024px preview: only before/after components, without teaching chrome",
       "passed": true,
-      "detail": 9
+      "detail": 13
     },
     {
       "name": "1024px preview: component previews retain necessary facts and learning cues",
@@ -492,12 +1630,47 @@
     {
       "name": "1024px preview: component previews preserve labels, constraints and visible descriptions",
       "passed": true,
-      "detail": 4
+      "detail": 6
+    },
+    {
+      "name": "1024px preview: purposeful repeated error keeps summary link and local correction context",
+      "passed": true,
+      "detail": "repeat-name-after"
+    },
+    {
+      "name": "900px preview: only before/after components, without teaching chrome",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "900px preview: component previews retain necessary facts and learning cues",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "900px preview: component previews fit without horizontal overflow",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "900px preview: before/after columns follow documented order",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "900px preview: component previews preserve labels, constraints and visible descriptions",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "900px preview: purposeful repeated error keeps summary link and local correction context",
+      "passed": true,
+      "detail": "repeat-name-after"
     },
     {
       "name": "390px preview: only before/after components, without teaching chrome",
       "passed": true,
-      "detail": 9
+      "detail": 13
     },
     {
       "name": "390px preview: component previews retain necessary facts and learning cues",
@@ -517,12 +1690,17 @@
     {
       "name": "390px preview: component previews preserve labels, constraints and visible descriptions",
       "passed": true,
-      "detail": 4
+      "detail": 6
+    },
+    {
+      "name": "390px preview: purposeful repeated error keeps summary link and local correction context",
+      "passed": true,
+      "detail": "repeat-name-after"
     },
     {
       "name": "320px preview: only before/after components, without teaching chrome",
       "passed": true,
-      "detail": 9
+      "detail": 13
     },
     {
       "name": "320px preview: component previews retain necessary facts and learning cues",
@@ -542,7 +1720,12 @@
     {
       "name": "320px preview: component previews preserve labels, constraints and visible descriptions",
       "passed": true,
-      "detail": 4
+      "detail": 6
+    },
+    {
+      "name": "320px preview: purposeful repeated error keeps summary link and local correction context",
+      "passed": true,
+      "detail": "repeat-name-after"
     }
   ]
 }

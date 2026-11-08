@@ -8,7 +8,7 @@
 
 ## 对照预览
 
-**左侧为改进前，右侧为改进后。**图片只展示组件，说明留在图片外；九组对照使用相同样式、业务对象和动作，不强制等高。
+**每组依次为调整前、建议方案，两张图片独立展示。**各自按组件内容取景，不拼接、不补齐高度；按可用宽度自然排列或换行。十三组对照使用相同样式、业务对象和动作：九组减少冗余，另有保持原样、补充说明、复杂引导与保留合理重复。建议方案不一定更短或更矮。
 
 以下为人工编写、浏览器实际渲染的合成示例，不是运行 skill 得到的模型 A/B 实验，也不是用户理解测试。
 
@@ -16,47 +16,84 @@
 
 首次使用者可能需要知道工作区与项目的关系，但不需要重复解释怎么点击按钮。
 
-![首次工作区前后对照：删重复介绍，保留项目归属关系](<assets/empty-state.png>)
+![改进前：工作区空态包含重复介绍和按钮说明](<assets/empty-state-before.png>)
+![改进后：保留工作区与项目的归属关系](<assets/empty-state-after.png>)
 
 ### 2. 筛选无结果：说明条件，不误报整个集合为空
 
 “没有匹配”不等于“没有项目”。保留搜索条件与真实恢复入口，不引导用户创建重复内容。
 
-![筛选无结果前后对照：保留关键词、恢复提示和清除筛选](<assets/filtered-results.png>)
+![改进前：筛选结果重复介绍搜索功能和按钮](<assets/filtered-results-before.png>)
+![改进后：保留关键词、恢复提示和清除筛选](<assets/filtered-results-after.png>)
 
 ### 3. 收藏空态：保留尚未学会的操作路径
 
 “浏览项目”说明去哪里；一句具体的引导补上如何让项目出现在收藏中。
 
-![收藏空态前后对照：保留在项目列表选择收藏的学习线索](<assets/favorites.png>)
+![改进前：收藏空态堆叠功能介绍和按钮说明](<assets/favorites-before.png>)
+![改进后：保留在项目列表选择收藏的学习线索](<assets/favorites-after.png>)
 
 ### 4. 暂时无事：状态说清楚就够，不硬加引导
 
 读取已完成、功能已配置且没有新通知时，一条明确状态可以足够，不必凑齐说明、插图和 CTA。
 
-![通知空态前后对照：只保留清楚的无新通知状态](<assets/quiet-notifications.png>)
+![改进前：通知空态重复介绍功能和无新通知状态](<assets/quiet-notifications-before.png>)
+![改进后：只保留清楚的无新通知状态](<assets/quiet-notifications-after.png>)
 
 ### 5. 列表：标题与操作已经说明用途
 
-![项目前后对照：保留工作区范围、项目名称、笔记数量与操作](<assets/section-heading.png>)
+![改进前：项目列表包含重复标题说明和同义标记](<assets/section-heading-before.png>)
+![改进后：保留工作区范围、项目名称、笔记数量与操作](<assets/section-heading-after.png>)
 
 ### 6. 表单：删显而易见的指导，留真实约束
 
-![表单前后对照：保留可见标签、必填、40字符限制和名称冲突错误](<assets/form.png>)
+![改进前：表单解释输入框和提交按钮的显而易见用法](<assets/form-before.png>)
+![改进后：保留可见标签、必填、40字符限制和名称冲突错误](<assets/form-after.png>)
 
 ### 7. 权限：准确说一次，而不是反复免责声明
 
-![权限前后对照：保留可见只读原因、联系管理员的路径与禁用操作](<assets/permission.png>)
+![改进前：权限页面反复解释只读限制](<assets/permission-before.png>)
+![改进后：保留可见只读原因、联系管理员的路径与禁用操作](<assets/permission-after.png>)
 
 ### 8. 结果未知：减少重复，不伪造成功
 
-![保存状态前后对照：保留结果未知、不要重复保存和查询结果操作](<assets/unknown-result.png>)
+![改进前：保存状态堆叠同义警告和安全套话](<assets/unknown-result-before.png>)
+![改进后：保留结果未知、不要重复保存和查询结果操作](<assets/unknown-result-after.png>)
 
 ### 9. 危险操作：少废话，不少后果
 
-![删除确认前后对照：对象、12条笔记、永久删除和不可恢复完整保留](<assets/destructive-action.png>)
+![改进前：删除确认包含功能自述和重复提醒](<assets/destructive-action-before.png>)
+![改进后：完整保留对象、12条笔记、永久删除和不可恢复](<assets/destructive-action-after.png>)
 
-窄屏上方为改进前、下方为改进后：[首次空态](<assets/empty-state-mobile.png>)、[筛选无结果](<assets/filtered-results-mobile.png>)、[收藏](<assets/favorites-mobile.png>)、[通知](<assets/quiet-notifications-mobile.png>)。图片来源见[纯组件预览页](<examples/previews.html>)；带场景说明和过删反例的内容保留在[教学示例页](<examples/index.html>)，来源哈希与浏览器检查见[渲染记录](<examples/render-report.json>)。
+### 10. 保持原样：已经充分，就不为改而改
+
+这不是少做了一步：在已配置、已读完且无待办的场景中，原有状态足够清楚。两侧完全相同。
+
+![原状：清楚表达暂时没有新通知](<assets/already-sufficient-before.png>)
+![建议：保持原样，不增加教程或改写同义词](<assets/already-sufficient-after.png>)
+
+### 11. 补一句说明：更长也可能更好
+
+首次使用者不理解工作区与项目的关系。按钮说明“能做什么”，不能代替这句概念解释。
+
+![原状：只有空状态与创建按钮，缺少概念关系](<assets/add-context-before.png>)
+![建议：增加一句工作区与项目的关系说明](<assets/add-context-after.png>)
+
+### 12. 复杂首次任务：需要分步引导
+
+在这个合成产品里，共享视图已有选项目、设可见人、发布前核对范围的流程。建议方案解释这些既有步骤，并未新增功能；短段落和步骤比一句口号更有用。
+
+![原状：共享视图只有选择项目的起步入口](<assets/guided-start-before.png>)
+![建议：补充共享视图概念与三个既有步骤](<assets/guided-start-after.png>)
+
+### 13. 合理重复：错误摘要与字段错误各有作用
+
+顶部摘要帮助定位错误，字段旁的同一原因帮助修正。保留两处表达与链接关联，不为避免重复而删除一处或换同义词。两侧呈现相同，仅示例 ID 不同。
+
+![原状：错误摘要链接到带局部错误的项目名称字段](<assets/purposeful-repetition-before.png>)
+![建议：保留摘要、字段错误与键盘定位路径](<assets/purposeful-repetition-after.png>)
+
+窄屏独立图片：首次空态[改进前](<assets/empty-state-mobile-before.png>)／[改进后](<assets/empty-state-mobile-after.png>)，筛选无结果[改进前](<assets/filtered-results-mobile-before.png>)／[改进后](<assets/filtered-results-mobile-after.png>)，收藏[改进前](<assets/favorites-mobile-before.png>)／[改进后](<assets/favorites-mobile-after.png>)，通知[改进前](<assets/quiet-notifications-mobile-before.png>)／[改进后](<assets/quiet-notifications-mobile-after.png>)。新增示例的窄屏图片：保持原样[原状](<assets/already-sufficient-mobile-before.png>)／[建议](<assets/already-sufficient-mobile-after.png>)，补充说明[原状](<assets/add-context-mobile-before.png>)／[建议](<assets/add-context-mobile-after.png>)，复杂引导[原状](<assets/guided-start-mobile-before.png>)／[建议](<assets/guided-start-mobile-after.png>)，合理重复[原状](<assets/purposeful-repetition-mobile-before.png>)／[建议](<assets/purposeful-repetition-mobile-after.png>)。图片来源见[纯组件预览页](<examples/previews.html>)；带场景说明和过删反例的内容保留在[教学示例页](<examples/index.html>)，来源哈希与浏览器检查见[渲染记录](<examples/render-report.json>)。
 
 ## 使用
 
@@ -130,7 +167,7 @@ ego-browser nodejs -e "await import('file:///C:/path/to/ui-without-noise/scripts
 
 截图脚本只打开本仓库静态文件，写入[图片目录](<assets/>)和[渲染记录](<examples/render-report.json>)，不启动常驻服务。实际图片仍须人工检查。
 
-测试验证技能结构、链接、声明的事实与学习线索、输入关联及渲染产物一致性，**不把字数下降当成设计质量指标**。浏览器检查多种宽度的局部条件；[CI](<.github/workflows/check.yml>)只运行静态检查。当前修改未推送时不代表云端已验证；这些检查也不构成模型效果测试、用户理解测试或完整 WCAG 审计。参见[贡献说明](<CONTRIBUTING.md>)。
+测试验证技能结构、链接、声明的事实与学习线索、输入关联及渲染产物一致性。截图按实测 DOM 边界核对，允许建议方案等高或更高，**不把字数或高度下降当成设计质量指标**。浏览器检查多种宽度的局部条件；[CI](<.github/workflows/check.yml>)只运行静态检查。当前修改未推送时不代表云端已验证；这些检查也不构成模型效果测试、用户理解测试或完整 WCAG 审计。参见[贡献说明](<CONTRIBUTING.md>)。
 
 ## 来源与区别
 
