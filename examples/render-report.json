@@ -1,141 +1,296 @@
 {
   "evidence": "browser-rendered synthetic editorial examples; not an agent benchmark",
   "captureMethod": "CDP Page.captureScreenshot, CSS document coordinates, captureBeyondViewport",
-  "generatedAt": "2026-11-08T11:53:55.644Z",
+  "screenshotSource": "examples/previews.html; before/after components only; no teaching chrome",
+  "generatedAt": "2026-11-08T14:15:47.899Z",
   "browser": {
     "engine": "Chromium",
     "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
   },
   "viewports": [
-    1200,
+    1440,
+    1024,
     390,
     320
   ],
   "inputs": {
-    "examples/cases.json": "97b9eabd3cbb632b4b63b1ee0f2a0b50d56a8cfeac7e6d226beb75011d3a0f3c",
-    "examples/styles.css": "8d98f845a372f27a815b1971d4ea424893525163975718acf517296671feea12",
-    "examples/index.html": "4199f318449ae103c51283beeaa9394b0f25c3f7fe877b4645e152b46a28cc05",
-    "scripts/build-examples.mjs": "cae42627a8827f07c884e02b9f074c5d2ec724bfaa7b25a5308f895e5acfeb3d",
-    "scripts/capture.mjs": "baf620c89f9054c360ae422a99ffa56d936537bbe80e5c2d15031f1a3e4cc72c"
+    "examples/cases.json": "634eeff7ebbc3096432bdd82d9965bec96ec049301658806d4def0cb4bca7791",
+    "examples/styles.css": "4c8e9a2353987319f82ce4747bb2ba88c39870abdef09a8be4de6d22987d0a8c",
+    "examples/index.html": "651556a36cab78b3f7034ce7692af11a39ec7cd152dba05de8fcbf7e6074ffc8",
+    "examples/previews.html": "24010e91e6fac0f89261ebcf782ab5d8d1bc28fc903e97c5cd19be43f928644a",
+    "scripts/build-examples.mjs": "a9cb0c132edbf63bf8b28d7bef28ed7e24392e6ca1c211388d1d55f012ae7653",
+    "scripts/capture.mjs": "70adc2778353223a4485b5a258cb1541438dfd8cd17a4ae21ba53deec61b21a8"
   },
   "screenshots": [
     {
       "file": "assets/empty-state.png",
-      "viewportWidth": 1200,
+      "viewportWidth": 1440,
       "x": 36,
-      "y": 249,
-      "width": 1113,
-      "height": 669,
-      "bytes": 42071,
-      "sha256": "1645ec559faaff89a437242f68537f01a0eef1870b8bd4418329d95565cc4f55"
+      "y": 76,
+      "width": 1353,
+      "height": 507,
+      "bytes": 29694,
+      "sha256": "942d3e908d6c5165a71c99a80eba2528657e4f864f308be2543d304a04d65892"
     },
     {
       "file": "assets/section-heading.png",
-      "viewportWidth": 1200,
-      "x": 44,
-      "y": 951,
-      "width": 1112,
-      "height": 577,
-      "bytes": 45551,
-      "sha256": "4d70d929202d021a6fcfcffdd3be85a0d022b1fef101683f9553888f6b64debf"
+      "viewportWidth": 1440,
+      "x": 36,
+      "y": 606,
+      "width": 1353,
+      "height": 408,
+      "bytes": 30430,
+      "sha256": "eee6298ac1b2f66bb39621ea5a24d6a550927db605b84658b47c374efa4d9796"
     },
     {
       "file": "assets/form.png",
-      "viewportWidth": 1200,
-      "x": 44,
-      "y": 1561,
-      "width": 1112,
-      "height": 616,
-      "bytes": 41601,
-      "sha256": "7716d6aa08588375585093ff3765fd3c00c1cc24a15834db31b5e3a0698ebb58"
+      "viewportWidth": 1440,
+      "x": 36,
+      "y": 1037,
+      "width": 1353,
+      "height": 447,
+      "bytes": 26045,
+      "sha256": "e2832bf9e435f3236050eb1b54cd976eb491849e81210890cf82eee899842fd3"
     },
     {
       "file": "assets/permission.png",
-      "viewportWidth": 1200,
-      "x": 44,
-      "y": 2210,
-      "width": 1112,
-      "height": 506,
-      "bytes": 37905,
-      "sha256": "969b6f5fff519b18eae1a3add17e0fc4a5ba5303f68888895c5be4fa6977b698"
+      "viewportWidth": 1440,
+      "x": 36,
+      "y": 1507,
+      "width": 1353,
+      "height": 337,
+      "bytes": 21559,
+      "sha256": "e110964362b236ac29cddc7affbedfa549c7b6afa85296ed02830abe61fe0cc4"
     },
     {
       "file": "assets/unknown-result.png",
-      "viewportWidth": 1200,
-      "x": 44,
-      "y": 2749,
-      "width": 1112,
-      "height": 512,
-      "bytes": 37275,
-      "sha256": "ec898fc752ea749c53d0f1e10c1809ff6b391a83ad18caf189ba948496aa2142"
+      "viewportWidth": 1440,
+      "x": 36,
+      "y": 1867,
+      "width": 1353,
+      "height": 343,
+      "bytes": 20904,
+      "sha256": "df75fffacb6561ad8780c6e1a0d0646647f8e6256c152a3af07ed28d7c17d79d"
     },
     {
       "file": "assets/destructive-action.png",
-      "viewportWidth": 1200,
-      "x": 44,
-      "y": 3294,
-      "width": 1112,
-      "height": 534,
-      "bytes": 42796,
-      "sha256": "52636b5e98fe733330d1389ce389aa68de00a6f20bc5eaf20ce0722ac32c7f30"
+      "viewportWidth": 1440,
+      "x": 36,
+      "y": 2233,
+      "width": 1353,
+      "height": 365,
+      "bytes": 28124,
+      "sha256": "6d2f3dbd527b6eba589710778cc93e2b9ab394e22feacb051d42651fecaa9dcd"
+    },
+    {
+      "file": "assets/filtered-results.png",
+      "viewportWidth": 1440,
+      "x": 36,
+      "y": 2621,
+      "width": 1353,
+      "height": 450,
+      "bytes": 30240,
+      "sha256": "da041f13af235a97b01a82ee7718553831be2b8e41afc6d61d70de60507509c4"
+    },
+    {
+      "file": "assets/favorites.png",
+      "viewportWidth": 1440,
+      "x": 36,
+      "y": 3094,
+      "width": 1353,
+      "height": 472,
+      "bytes": 33260,
+      "sha256": "7afcac3c4bba8949f36f2cd6d3220cdd5a7302d9d0199e23d9f8b3cdc0b3c0d1"
+    },
+    {
+      "file": "assets/quiet-notifications.png",
+      "viewportWidth": 1440,
+      "x": 36,
+      "y": 3589,
+      "width": 1353,
+      "height": 354,
+      "bytes": 21097,
+      "sha256": "a4adb74f81e2b12b0f8b1f9b9ffde4da4cd5ed3a4a692f188058d467a5f4ca16"
     },
     {
       "file": "assets/empty-state-mobile.png",
       "viewportWidth": 390,
       "x": 12,
-      "y": 293,
+      "y": 52,
       "width": 351,
-      "height": 952,
-      "bytes": 36485,
-      "sha256": "6c0622289bc18f1fee93876f254d651c1c1341500ae73006064067d0944ffc95"
+      "height": 794,
+      "bytes": 27575,
+      "sha256": "036e5deb991b8892199d7431f4cddeacc3c549cccdaeccb7759450680e44164e"
+    },
+    {
+      "file": "assets/filtered-results-mobile.png",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 4153,
+      "width": 351,
+      "height": 715,
+      "bytes": 28098,
+      "sha256": "a917a52389ac3c1d8a084b963d666775b8064fc15b40777f1a81f5964c0977c4"
+    },
+    {
+      "file": "assets/favorites-mobile.png",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 4891,
+      "width": 351,
+      "height": 760,
+      "bytes": 30505,
+      "sha256": "2ea4a1e10716a0e319101fb673ca6fdd0766f92ca74498d0fc312edbf7b4806c"
+    },
+    {
+      "file": "assets/quiet-notifications-mobile.png",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 5674,
+      "width": 351,
+      "height": 537,
+      "bytes": 19250,
+      "sha256": "e3e7d25b95f36095aa2719a3d0e8dc1b208780acd0f439b6ff970743f01aec8d"
     }
   ],
   "checks": [
     {
-      "name": "1200px: no document horizontal overflow",
+      "name": "1440px: no document horizontal overflow",
       "passed": true,
       "detail": {
-        "scrollWidth": 1185,
-        "width": 1200
+        "scrollWidth": 1425,
+        "width": 1440
       }
     },
     {
-      "name": "1200px: all comparison containers fit",
+      "name": "1440px: all comparison containers fit",
       "passed": true,
       "detail": []
     },
     {
-      "name": "1200px: all displayed buttons have text names",
+      "name": "1440px: all displayed buttons have text names",
       "passed": true,
-      "detail": 18
+      "detail": 24
     },
     {
-      "name": "1200px: inputs retain labels and actual constraints",
+      "name": "1440px: inputs retain labels and actual constraints",
       "passed": true,
       "detail": 2
     },
     {
-      "name": "1200px: description associations resolve",
+      "name": "1440px: description associations resolve",
       "passed": true,
       "detail": null
     },
     {
-      "name": "1200px: disabled reasons remain visible and readable",
+      "name": "1440px: disabled reasons remain visible and readable",
       "passed": true,
       "detail": 2
     },
     {
-      "name": "1200px: necessary facts visible in both variants",
+      "name": "1440px: necessary facts visible in both recommended variants",
       "passed": true,
       "detail": []
     },
     {
-      "name": "1200px: same styling, no hidden-copy tricks",
+      "name": "1440px: useful learning cues visible in recommended variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1440px: overtrimmed variants explicitly labeled as counterexamples",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "1440px: three-way comparisons stack when space is insufficient",
+      "passed": true,
+      "detail": {
+        "columns": 3
+      }
+    },
+    {
+      "name": "1440px: necessary learning copy not reduced to tiny text",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "1440px: same styling, no hidden-copy tricks",
       "passed": true,
       "detail": null
     },
     {
-      "name": "1200px: demo has no scripts, external resources or persistence handlers",
+      "name": "1440px: demo has no scripts, external resources or persistence handlers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024px: no document horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 1009,
+        "width": 1024
+      }
+    },
+    {
+      "name": "1024px: all comparison containers fit",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1024px: all displayed buttons have text names",
+      "passed": true,
+      "detail": 24
+    },
+    {
+      "name": "1024px: inputs retain labels and actual constraints",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "1024px: description associations resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024px: disabled reasons remain visible and readable",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "1024px: necessary facts visible in both recommended variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1024px: useful learning cues visible in recommended variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1024px: overtrimmed variants explicitly labeled as counterexamples",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "1024px: three-way comparisons stack when space is insufficient",
+      "passed": true,
+      "detail": {
+        "columns": 1
+      }
+    },
+    {
+      "name": "1024px: necessary learning copy not reduced to tiny text",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "1024px: same styling, no hidden-copy tricks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1024px: demo has no scripts, external resources or persistence handlers",
       "passed": true,
       "detail": null
     },
@@ -155,7 +310,7 @@
     {
       "name": "390px: all displayed buttons have text names",
       "passed": true,
-      "detail": 18
+      "detail": 24
     },
     {
       "name": "390px: inputs retain labels and actual constraints",
@@ -173,9 +328,31 @@
       "detail": 2
     },
     {
-      "name": "390px: necessary facts visible in both variants",
+      "name": "390px: necessary facts visible in both recommended variants",
       "passed": true,
       "detail": []
+    },
+    {
+      "name": "390px: useful learning cues visible in recommended variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "390px: overtrimmed variants explicitly labeled as counterexamples",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "390px: three-way comparisons stack when space is insufficient",
+      "passed": true,
+      "detail": {
+        "columns": 1
+      }
+    },
+    {
+      "name": "390px: necessary learning copy not reduced to tiny text",
+      "passed": true,
+      "detail": 0
     },
     {
       "name": "390px: same styling, no hidden-copy tricks",
@@ -203,7 +380,7 @@
     {
       "name": "320px: all displayed buttons have text names",
       "passed": true,
-      "detail": 18
+      "detail": 24
     },
     {
       "name": "320px: inputs retain labels and actual constraints",
@@ -221,9 +398,31 @@
       "detail": 2
     },
     {
-      "name": "320px: necessary facts visible in both variants",
+      "name": "320px: necessary facts visible in both recommended variants",
       "passed": true,
       "detail": []
+    },
+    {
+      "name": "320px: useful learning cues visible in recommended variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320px: overtrimmed variants explicitly labeled as counterexamples",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "320px: three-way comparisons stack when space is insufficient",
+      "passed": true,
+      "detail": {
+        "columns": 1
+      }
+    },
+    {
+      "name": "320px: necessary learning copy not reduced to tiny text",
+      "passed": true,
+      "detail": 0
     },
     {
       "name": "320px: same styling, no hidden-copy tricks",
@@ -234,6 +433,116 @@
       "name": "320px: demo has no scripts, external resources or persistence handlers",
       "passed": true,
       "detail": null
+    },
+    {
+      "name": "320px: keyboard Tab reaches recommended form action",
+      "passed": true,
+      "detail": "创建项目"
+    },
+    {
+      "name": "320px: keyboard Shift+Tab returns to labeled input",
+      "passed": true,
+      "detail": "name-after"
+    },
+    {
+      "name": "1440px preview: only before/after components, without teaching chrome",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "1440px preview: component previews retain necessary facts and learning cues",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1440px preview: component previews fit without horizontal overflow",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1440px preview: before/after columns follow documented order",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "1440px preview: component previews preserve labels, constraints and visible descriptions",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "1024px preview: only before/after components, without teaching chrome",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "1024px preview: component previews retain necessary facts and learning cues",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1024px preview: component previews fit without horizontal overflow",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1024px preview: before/after columns follow documented order",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "1024px preview: component previews preserve labels, constraints and visible descriptions",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "390px preview: only before/after components, without teaching chrome",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "390px preview: component previews retain necessary facts and learning cues",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "390px preview: component previews fit without horizontal overflow",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "390px preview: before/after columns follow documented order",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "390px preview: component previews preserve labels, constraints and visible descriptions",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "320px preview: only before/after components, without teaching chrome",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "320px preview: component previews retain necessary facts and learning cues",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320px preview: component previews fit without horizontal overflow",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320px preview: before/after columns follow documented order",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "320px preview: component previews preserve labels, constraints and visible descriptions",
+      "passed": true,
+      "detail": 4
     }
   ]
 }

@@ -4,7 +4,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { renderExamples } from '../scripts/build-examples.mjs';
+import { renderExamples, renderPreviews } from '../scripts/build-examples.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const text = file => readFile(path.join(root, file), 'utf8');
@@ -38,19 +38,43 @@ test('the installed skill directory contains only guidance and license', async (
   assert.equal(await text('LICENSE'), await text('skills/ui-without-noise/LICENSE'));
 });
 
-test('all six examples retain their declared necessary facts and actions', () => {
-  assert.equal(cases.length, 6);
-  assert.equal(new Set(cases.map(item => item.id)).size, 6);
+test('all nine recommended variants retain their declared necessary facts and actions', () => {
+  assert.equal(cases.length, 9);
+  assert.equal(new Set(cases.map(item => item.id)).size, cases.length);
   for (const item of cases) {
     assert.match(item.id, /^[a-z]+(?:-[a-z]+)*$/);
     for (const required of item.protected) {
       assert.ok(strip(item.before).includes(required), `${item.id}: before missing ${required}`);
       assert.ok(strip(item.after).includes(required), `${item.id}: after missing ${required}`);
     }
-    assert.ok(strip(item.after).length < strip(item.before).length, `${item.id}: no subtraction shown`);
+    assert.ok(strip(item.after).length > 0, `${item.id}: recommended screen is blank`);
+    for (const fact of item.learning ?? []) assert.ok(strip(item.after).includes(fact), `${item.id}: missing learning cue ${fact}`);
     const buttonLabels = html => [...html.matchAll(/<button\b[^>]*>(.*?)<\/button>/gs)].map(match => strip(match[1]));
     assert.deepEqual(buttonLabels(item.after), buttonLabels(item.before), `${item.id}: actions changed`);
   }
+});
+
+test('overtrimmed examples are labeled counterexamples, not recommendations', () => {
+  const triples = cases.filter(item => item.overtrimmed);
+  assert.deepEqual(triples.map(item => item.id), ['empty-state', 'filtered-results', 'favorites', 'quiet-notifications']);
+  for (const item of triples) {
+    assert.ok(item.context, `${item.id}: audience and state context required`);
+    assert.notEqual(item.overtrimmed, item.after);
+    assert.match(renderExamples([item]), /data-variant="overtrimmed" aria-label="删得过头 · 反例"/);
+    const missingMeaning = [...item.protected, ...(item.learning ?? [])].some(fact => !strip(item.overtrimmed).includes(fact));
+    assert.ok(missingMeaning, `${item.id}: explain the counterexample's comprehension gap`);
+  }
+  const quiet = cases.find(item => item.id === 'quiet-notifications');
+  assert.doesNotMatch(quiet.after, /<button|<p\b/);
+  assert.match(quiet.after, /暂时没有新通知/);
+});
+
+test('guidance preserves learning and rejects word-count-only quality claims', async () => {
+  const skill = await text('skills/ui-without-noise/SKILL.md');
+  assert.match(skill, /least information sufficient/);
+  assert.match(skill, /First use \/ unfamiliar feature/);
+  assert.match(skill, /Temporarily nothing to do/);
+  assert.match(skill, /Do not equate lower word count/);
 });
 
 test('form constraints and error associations survive on both sides', () => {
@@ -79,6 +103,23 @@ test('generated page exactly matches current fixtures and builder', async () => 
   const changed = structuredClone(cases);
   changed[0].change += ' synthetic drift';
   assert.notEqual(current, renderExamples(changed), 'non-protected fixture drift must also be detectable');
+});
+
+test('README previews contain only unchanged before/after components', async () => {
+  const html = await text('examples/previews.html');
+  assert.equal(html, renderPreviews(cases));
+  assert.equal((html.match(/class="component-comparison pair"/g) || []).length, cases.length);
+  assert.equal((html.match(/data-variant="before"/g) || []).length, cases.length);
+  assert.equal((html.match(/data-variant="after"/g) || []).length, cases.length);
+  assert.doesNotMatch(html, /case-heading|case-number|variant-title|class="context"|class="change"|data-variant="overtrimmed"|page-header|<script\b|\bon\w+\s*=|(?:src|href)="https?:/i);
+  for (const item of cases) for (const side of ['before', 'after']) assert.ok(html.includes(`>${item[side]}</article>`), `${item.id}/${side}: component markup must be unchanged`);
+  const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(new Set(ids).size, ids.length);
+  assert.match(html, /form-action 'none'/);
+  const readme = await text('README.md');
+  assert.doesNotMatch(readme, /三方对照|<details>|<summary>/);
+  assert.match(readme, /左侧为改进前，右侧为改进后/);
+  assert.match(await text('.github/workflows/check.yml'), /run: node scripts\/build-examples\.mjs --check/);
 });
 
 test('static demo includes all pairs, unique ids and no executable or remote assets', async () => {
@@ -114,13 +155,15 @@ test('all local Markdown links and image destinations resolve inside repository'
 test('render report binds screenshots to current inputs and successful viewport checks', async () => {
   const report = JSON.parse(await text('examples/render-report.json'));
   assert.equal(report.evidence, 'browser-rendered synthetic editorial examples; not an agent benchmark');
-  assert.deepEqual(report.viewports, [1200, 390, 320]);
-  assert.deepEqual(Object.keys(report.inputs).sort(), ['examples/cases.json', 'examples/styles.css', 'examples/index.html', 'scripts/build-examples.mjs', 'scripts/capture.mjs'].sort());
-  assert.deepEqual(report.screenshots.map(shot => shot.file).sort(), [...cases.map(item => `assets/${item.id}.png`), 'assets/empty-state-mobile.png'].sort());
+  assert.deepEqual(report.viewports, [1440, 1024, 390, 320]);
+  assert.equal(report.screenshotSource, 'examples/previews.html; before/after components only; no teaching chrome');
+  assert.deepEqual(Object.keys(report.inputs).sort(), ['examples/cases.json', 'examples/styles.css', 'examples/index.html', 'examples/previews.html', 'scripts/build-examples.mjs', 'scripts/capture.mjs'].sort());
+  const expectedShots = [...cases.map(item => `assets/${item.id}.png`), ...cases.filter(item => item.overtrimmed).map(item => `assets/${item.id}-mobile.png`)];
+  assert.deepEqual(report.screenshots.map(shot => shot.file).sort(), expectedShots.sort());
   for (const [file, expected] of Object.entries(report.inputs)) {
     assert.equal(sha(await readFile(path.join(root, file))), expected, `stale render input: ${file}`);
   }
-  assert.equal(report.screenshots.length, 7);
+  assert.equal(report.screenshots.length, 13);
   for (const shot of report.screenshots) {
     const bytes = await readFile(path.join(root, shot.file));
     assert.deepEqual([...bytes.subarray(0, 8)], [137,80,78,71,13,10,26,10]);
@@ -128,6 +171,7 @@ test('render report binds screenshots to current inputs and successful viewport 
     assert.equal(bytes.readUInt32BE(20), shot.height, `screenshot height: ${shot.file}`);
     assert.equal(sha(bytes), shot.sha256, `screenshot drift: ${shot.file}`);
   }
-  assert.ok(report.checks.length >= 10);
+  assert.equal(report.checks.length, 74, '54 teaching-page checks plus five component-preview checks at four widths');
+  assert.equal(report.checks.filter(check => check.name.includes('preview:')).length, 20);
   assert.ok(report.checks.every(check => check.passed), 'browser checks contain failures');
 });

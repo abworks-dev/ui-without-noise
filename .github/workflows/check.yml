@@ -16,9 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Rebuild synthetic examples
-        run: node scripts/build-examples.mjs
-      - name: Check generated page is current
-        run: git diff --exit-code -- examples/index.html
+      - name: Check generated pages are current
+        run: node scripts/build-examples.mjs --check
       - name: Validate guidance, examples, links and capture hashes
         run: node --test tests/repository.test.mjs

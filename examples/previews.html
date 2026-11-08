@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; form-action 'none'; base-uri 'none'">
+  <title>UI without noise · 组件前后对照</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main aria-label="组件前后对照">
+<section class="component-comparison pair" id="empty-state" aria-label="首次空态：少重复，不少概念引导">
+  <article class="screen" data-variant="before" aria-label="改进前"><div class="heading"><div><span class="eyebrow">WORKSPACE MANAGEMENT</span><h3>工作区</h3></div><span class="badge">工作区管理</span></div><p class="intro">在这里创建、管理和组织你的工作区。</p><div class="notice">工作区用于集中组织你的项目。你可以在这里查看所有工作区。</div><div class="empty"><span class="empty-mark" aria-hidden="true">＋</span><h4>还没有工作区</h4><p>创建第一个工作区，开始组织你的项目。</p><button type="button" class="primary">创建工作区</button><p class="meta">点击上方按钮即可创建一个新的工作区。</p></div></article>
+  <article class="screen" data-variant="after" aria-label="改进后"><div class="heading"><h3>工作区</h3></div><div class="empty"><h4>还没有工作区</h4><p>把相关项目放在同一个工作区中。</p><button type="button" class="primary">创建工作区</button></div></article>
+</section>
+<section class="component-comparison pair" id="section-heading" aria-label="列表：标题与操作已经说明用途">
+  <article class="screen" data-variant="before" aria-label="改进前"><span class="eyebrow">YOUR PROJECTS</span><div class="heading"><h3>个人工作区的项目</h3><button type="button" class="primary">新建项目</button></div><p class="intro">集中管理你的项目，随时查看与打开。</p><div class="notice">下面列出了当前工作区的所有项目。</div><div class="list"><div class="item"><div><h4>网站改版 <span class="badge">项目</span></h4><p class="meta">这是你的一个项目 · 12 条笔记</p></div><button type="button">打开</button></div><div class="item"><div><h4>旅行计划 <span class="badge">项目</span></h4><p class="meta">这是你的一个项目 · 8 条笔记</p></div><button type="button">打开</button></div></div></article>
+  <article class="screen" data-variant="after" aria-label="改进后"><div class="heading"><h3>个人工作区的项目</h3><button type="button" class="primary">新建项目</button></div><div class="list"><div class="item"><div><h4>网站改版</h4><p class="meta">12 条笔记</p></div><button type="button">打开</button></div><div class="item"><div><h4>旅行计划</h4><p class="meta">8 条笔记</p></div><button type="button">打开</button></div></div></article>
+</section>
+<section class="component-comparison pair" id="form" aria-label="表单：删显而易见的指导，留真实约束">
+  <article class="screen" data-variant="before" aria-label="改进前"><h3>创建项目</h3><p class="intro">填写下方信息来创建一个新的项目。</p><div class="field"><label for="name-before">项目名称（必填）</label><p class="meta">请在此输入你的项目名称。</p><input id="name-before" value="旅行计划" required maxlength="40" aria-invalid="true" aria-describedby="name-hint-before name-error-before"><p id="name-hint-before" class="hint">最多 40 个字符。</p><p id="name-error-before" class="error">名称已被使用，请换一个名称。</p></div><div class="notice">完成填写后，点击创建项目按钮继续。</div><button type="button" class="primary">创建项目</button></article>
+  <article class="screen" data-variant="after" aria-label="改进后"><h3>创建项目</h3><div class="field"><label for="name-after">项目名称（必填）</label><input id="name-after" value="旅行计划" required maxlength="40" aria-invalid="true" aria-describedby="name-hint-after name-error-after"><p id="name-hint-after" class="hint">最多 40 个字符。</p><p id="name-error-after" class="error">名称已被使用，请换一个名称。</p></div><button type="button" class="primary">创建项目</button></article>
+</section>
+<section class="component-comparison pair" id="permission" aria-label="权限：准确说一次，而不是反复免责声明">
+  <article class="screen" data-variant="before" aria-label="改进前"><h3>工作区设置</h3><p class="intro">查看和管理当前工作区的设置。</p><div class="notice warning">你当前处于只读模式，不能进行编辑操作。</div><div class="notice warning">此页面的编辑功能需要编辑权限。</div><p id="permission-before" class="hint">只读权限，无法编辑。联系管理员申请编辑权限。</p><button type="button" disabled aria-describedby="permission-before">编辑设置</button></article>
+  <article class="screen" data-variant="after" aria-label="改进后"><h3>工作区设置</h3><p id="permission-after" class="state">只读权限，无法编辑。联系管理员申请编辑权限。</p><button type="button" disabled aria-describedby="permission-after">编辑设置</button></article>
+</section>
+<section class="component-comparison pair" id="unknown-result" aria-label="结果未知：减少重复，不伪造成功">
+  <article class="screen" data-variant="before" aria-label="改进前"><div class="heading"><h3>保存</h3><span class="badge">状态待确认</span></div><p class="intro">在这里查看当前保存操作的状态。</p><div class="notice warning">暂时无法确定保存是否成功。</div><div class="notice warning">保存结果未知。先查询这次保存的结果，不要重复保存。</div><p class="meta">为确保操作安全，请在确认结果后继续。</p><button type="button" class="primary">查询结果</button></article>
+  <article class="screen" data-variant="after" aria-label="改进后"><h3>保存</h3><p class="state warning-text">保存结果未知。先查询这次保存的结果，不要重复保存。</p><button type="button" class="primary">查询结果</button></article>
+</section>
+<section class="component-comparison pair" id="destructive-action" aria-label="危险操作：少废话，不少后果">
+  <article class="screen" data-variant="before" aria-label="改进前"><span class="eyebrow">PROJECT DELETION</span><h3>删除项目？</h3><p class="intro">你可以在此删除不再需要的项目。</p><div class="notice warning">请谨慎操作，删除是一项重要操作。</div><p class="state danger-text">将永久删除「旅行计划」及其中 12 条笔记，无法恢复。</p><p class="meta">点击删除项目进行删除，或点击取消返回。</p><div class="actions"><button type="button">取消</button><button type="button" class="danger">删除项目</button></div></article>
+  <article class="screen" data-variant="after" aria-label="改进后"><h3>删除项目？</h3><p class="state danger-text">将永久删除「旅行计划」及其中 12 条笔记，无法恢复。</p><div class="actions"><button type="button">取消</button><button type="button" class="danger">删除项目</button></div></article>
+</section>
+<section class="component-comparison pair" id="filtered-results" aria-label="筛选无结果：说明条件，不误报整个集合为空">
+  <article class="screen" data-variant="before" aria-label="改进前"><span class="eyebrow">PROJECT SEARCH</span><h3>项目</h3><p class="intro">在这里搜索和查找你的项目。</p><div class="notice">当前正在查看关键词“设计”的搜索结果。</div><div class="empty"><h4>没有匹配“设计”的项目</h4><p>更换关键词，或清除筛选查看全部项目。</p><button type="button">清除筛选</button><p class="meta">点击上方按钮可以移除搜索条件。</p></div></article>
+  <article class="screen" data-variant="after" aria-label="改进后"><h3>项目</h3><div class="empty"><h4>没有匹配“设计”的项目</h4><p>更换关键词，或清除筛选查看全部项目。</p><button type="button">清除筛选</button></div></article>
+</section>
+<section class="component-comparison pair" id="favorites" aria-label="收藏空态：保留用户尚未学会的操作路径">
+  <article class="screen" data-variant="before" aria-label="改进前"><span class="eyebrow">YOUR FAVORITES</span><h3>收藏</h3><p class="intro">轻松管理你的收藏，让常用项目触手可及。</p><div class="notice">这里是用于展示你收藏的项目的地方。</div><div class="empty"><h4>还没有收藏的项目</h4><p>在项目列表中选择“收藏”，常用项目就会显示在这里。</p><button type="button" class="primary">浏览项目</button><p class="meta">点击浏览项目按钮查看可收藏的项目。</p></div></article>
+  <article class="screen" data-variant="after" aria-label="改进后"><h3>收藏</h3><div class="empty"><h4>还没有收藏的项目</h4><p>在项目列表中选择“收藏”，常用项目就会显示在这里。</p><button type="button" class="primary">浏览项目</button></div></article>
+</section>
+<section class="component-comparison pair" id="quiet-notifications" aria-label="暂时无事：状态说清楚就够，不硬加引导">
+  <article class="screen" data-variant="before" aria-label="改进前"><span class="eyebrow">NOTIFICATION CENTER</span><h3>通知</h3><p class="intro">在这里查看并管理你的最新通知。</p><div class="notice">当有新的通知时，你可以在此查看。</div><div class="empty"><h4>暂时没有新通知</h4><p>目前没有需要显示的新通知。</p></div></article>
+  <article class="screen" data-variant="after" aria-label="改进后"><h3>通知</h3><div class="empty"><h4>暂时没有新通知</h4></div></article>
+</section>
+</main>
+</body>
+</html>
