@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; form-action 'none'; base-uri 'none'">
+  <title>UI without noise · 前后对照</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <header class="page-header">
+    <h1>少解释一次，让界面说清楚。</h1>
+    <p>六组合成界面：同一套样式、同一批对象和操作，只调整冗余文字与不再需要的容器。</p>
+    <p>这是人工编写的静态教学示例，不是 agent 运行效果测评。按钮不连接业务，输入仅留在当前页面。</p>
+    <nav aria-label="对照场景"><a href="#empty-state">1. 空态</a><a href="#section-heading">2. 列表</a><a href="#form">3. 表单</a><a href="#permission">4. 权限</a><a href="#unknown-result">5. 结果未知</a><a href="#destructive-action">6. 危险操作</a></nav>
+  </header>
+
+<section class="comparison" id="empty-state" aria-labelledby="title-empty-state">
+  <header class="case-heading"><span class="case-number">01</span><h2 id="title-empty-state">空态：给下一步，不再介绍功能</h2></header>
+  <div class="pair">
+    <article class="variant" data-variant="before" aria-label="精简前"><p class="variant-title">精简前 · 重复解释</p><div class="screen"><div class="heading"><div><span class="eyebrow">WORKSPACE MANAGEMENT</span><h3>工作区</h3></div><span class="badge">工作区管理</span></div><p class="intro">在这里创建、管理和组织你的工作区。</p><div class="notice">工作区用于集中组织你的项目。你可以在这里查看所有工作区。</div><div class="empty"><span class="empty-mark" aria-hidden="true">＋</span><h4>还没有工作区</h4><p>创建第一个工作区，开始组织你的项目。</p><button type="button" class="primary">创建工作区</button><p class="meta">点击上方按钮即可创建一个新的工作区。</p></div></div></article>
+    <article class="variant" data-variant="after" aria-label="精简后"><p class="variant-title">精简后 · 保留必要信息</p><div class="screen"><div class="heading"><h3>工作区</h3></div><div class="empty"><h4>还没有工作区</h4><button type="button" class="primary">创建工作区</button></div></div></article>
+  </div>
+  <p class="change">删除标题复述、说明卡和装饰性标签；保留真实空态及创建操作。</p>
+</section>
+
+<section class="comparison" id="section-heading" aria-labelledby="title-section-heading">
+  <header class="case-heading"><span class="case-number">02</span><h2 id="title-section-heading">列表：标题与操作已经说明用途</h2></header>
+  <div class="pair">
+    <article class="variant" data-variant="before" aria-label="精简前"><p class="variant-title">精简前 · 重复解释</p><div class="screen"><span class="eyebrow">YOUR PROJECTS</span><div class="heading"><h3>个人工作区的项目</h3><button type="button" class="primary">新建项目</button></div><p class="intro">集中管理你的项目，随时查看与打开。</p><div class="notice">下面列出了当前工作区的所有项目。</div><div class="list"><div class="item"><div><h4>网站改版 <span class="badge">项目</span></h4><p class="meta">这是你的一个项目 · 12 条笔记</p></div><button type="button">打开</button></div><div class="item"><div><h4>旅行计划 <span class="badge">项目</span></h4><p class="meta">这是你的一个项目 · 8 条笔记</p></div><button type="button">打开</button></div></div></div></article>
+    <article class="variant" data-variant="after" aria-label="精简后"><p class="variant-title">精简后 · 保留必要信息</p><div class="screen"><div class="heading"><h3>个人工作区的项目</h3><button type="button" class="primary">新建项目</button></div><div class="list"><div class="item"><div><h4>网站改版</h4><p class="meta">12 条笔记</p></div><button type="button">打开</button></div><div class="item"><div><h4>旅行计划</h4><p class="meta">8 条笔记</p></div><button type="button">打开</button></div></div></div></article>
+  </div>
+  <p class="change">去掉英文眉题、重复副标题和每行的同义 badge；项目名称、数量和操作不变。</p>
+</section>
+
+<section class="comparison" id="form" aria-labelledby="title-form">
+  <header class="case-heading"><span class="case-number">03</span><h2 id="title-form">表单：删显而易见的指导，留真实约束</h2></header>
+  <div class="pair">
+    <article class="variant" data-variant="before" aria-label="精简前"><p class="variant-title">精简前 · 重复解释</p><div class="screen"><h3>创建项目</h3><p class="intro">填写下方信息来创建一个新的项目。</p><div class="field"><label for="name-before">项目名称（必填）</label><p class="meta">请在此输入你的项目名称。</p><input id="name-before" value="旅行计划" required maxlength="40" aria-invalid="true" aria-describedby="name-hint-before name-error-before"><p id="name-hint-before" class="hint">最多 40 个字符。</p><p id="name-error-before" class="error">名称已被使用，请换一个名称。</p></div><div class="notice">完成填写后，点击创建项目按钮继续。</div><button type="button" class="primary">创建项目</button></div></article>
+    <article class="variant" data-variant="after" aria-label="精简后"><p class="variant-title">精简后 · 保留必要信息</p><div class="screen"><h3>创建项目</h3><div class="field"><label for="name-after">项目名称（必填）</label><input id="name-after" value="旅行计划" required maxlength="40" aria-invalid="true" aria-describedby="name-hint-after name-error-after"><p id="name-hint-after" class="hint">最多 40 个字符。</p><p id="name-error-after" class="error">名称已被使用，请换一个名称。</p></div><button type="button" class="primary">创建项目</button></div></article>
+  </div>
+  <p class="change">不再解释输入框怎么用；保留可见 label、必填、长度限制和字段错误。</p>
+</section>
+
+<section class="comparison" id="permission" aria-labelledby="title-permission">
+  <header class="case-heading"><span class="case-number">04</span><h2 id="title-permission">权限：准确说一次，而不是反复免责声明</h2></header>
+  <div class="pair">
+    <article class="variant" data-variant="before" aria-label="精简前"><p class="variant-title">精简前 · 重复解释</p><div class="screen"><h3>工作区设置</h3><p class="intro">查看和管理当前工作区的设置。</p><div class="notice warning">你当前处于只读模式，不能进行编辑操作。</div><div class="notice warning">此页面的编辑功能需要编辑权限。</div><p id="permission-before" class="hint">只读权限，无法编辑。联系管理员申请编辑权限。</p><button type="button" disabled aria-describedby="permission-before">编辑设置</button></div></article>
+    <article class="variant" data-variant="after" aria-label="精简后"><p class="variant-title">精简后 · 保留必要信息</p><div class="screen"><h3>工作区设置</h3><p id="permission-after" class="state">只读权限，无法编辑。联系管理员申请编辑权限。</p><button type="button" disabled aria-describedby="permission-after">编辑设置</button></div></article>
+  </div>
+  <p class="change">合并同一作用域的权限说明；保留可见原因和下一步，不把禁用原因藏到 tooltip。</p>
+</section>
+
+<section class="comparison" id="unknown-result" aria-labelledby="title-unknown-result">
+  <header class="case-heading"><span class="case-number">05</span><h2 id="title-unknown-result">结果未知：减少重复，不伪造成功</h2></header>
+  <div class="pair">
+    <article class="variant" data-variant="before" aria-label="精简前"><p class="variant-title">精简前 · 重复解释</p><div class="screen"><div class="heading"><h3>保存</h3><span class="badge">状态待确认</span></div><p class="intro">在这里查看当前保存操作的状态。</p><div class="notice warning">暂时无法确定保存是否成功。</div><div class="notice warning">保存结果未知。先查询这次保存的结果，不要重复保存。</div><p class="meta">为确保操作安全，请在确认结果后继续。</p><button type="button" class="primary">查询结果</button></div></article>
+    <article class="variant" data-variant="after" aria-label="精简后"><p class="variant-title">精简后 · 保留必要信息</p><div class="screen"><h3>保存</h3><p class="state warning-text">保存结果未知。先查询这次保存的结果，不要重复保存。</p><button type="button" class="primary">查询结果</button></div></article>
+  </div>
+  <p class="change">删掉同义警告和通用安全套话；未知事实、避免重复保存的约束及查询操作完整保留。</p>
+</section>
+
+<section class="comparison" id="destructive-action" aria-labelledby="title-destructive-action">
+  <header class="case-heading"><span class="case-number">06</span><h2 id="title-destructive-action">危险操作：少废话，不少后果</h2></header>
+  <div class="pair">
+    <article class="variant" data-variant="before" aria-label="精简前"><p class="variant-title">精简前 · 重复解释</p><div class="screen"><span class="eyebrow">PROJECT DELETION</span><h3>删除项目？</h3><p class="intro">你可以在此删除不再需要的项目。</p><div class="notice warning">请谨慎操作，删除是一项重要操作。</div><p class="state danger-text">将永久删除「旅行计划」及其中 12 条笔记，无法恢复。</p><p class="meta">点击删除项目进行删除，或点击取消返回。</p><div class="actions"><button type="button">取消</button><button type="button" class="danger">删除项目</button></div></div></article>
+    <article class="variant" data-variant="after" aria-label="精简后"><p class="variant-title">精简后 · 保留必要信息</p><div class="screen"><h3>删除项目？</h3><p class="state danger-text">将永久删除「旅行计划」及其中 12 条笔记，无法恢复。</p><div class="actions"><button type="button">取消</button><button type="button" class="danger">删除项目</button></div></div></article>
+  </div>
+  <p class="change">删掉功能自述和重复提醒；对象、12 条笔记、永久删除及不可恢复完整保留。</p>
+</section>
+  <footer>示例不包含真实用户数据、联网资源、存储、遥测或业务请求。浏览器渲染结果不等于技能效果已获验证。</footer>
+</main>
+</body>
+</html>

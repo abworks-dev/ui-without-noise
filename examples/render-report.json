@@ -1,0 +1,239 @@
+{
+  "evidence": "browser-rendered synthetic editorial examples; not an agent benchmark",
+  "captureMethod": "CDP Page.captureScreenshot, CSS document coordinates, captureBeyondViewport",
+  "generatedAt": "2026-11-08T11:53:55.644Z",
+  "browser": {
+    "engine": "Chromium",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+  },
+  "viewports": [
+    1200,
+    390,
+    320
+  ],
+  "inputs": {
+    "examples/cases.json": "97b9eabd3cbb632b4b63b1ee0f2a0b50d56a8cfeac7e6d226beb75011d3a0f3c",
+    "examples/styles.css": "8d98f845a372f27a815b1971d4ea424893525163975718acf517296671feea12",
+    "examples/index.html": "4199f318449ae103c51283beeaa9394b0f25c3f7fe877b4645e152b46a28cc05",
+    "scripts/build-examples.mjs": "cae42627a8827f07c884e02b9f074c5d2ec724bfaa7b25a5308f895e5acfeb3d",
+    "scripts/capture.mjs": "baf620c89f9054c360ae422a99ffa56d936537bbe80e5c2d15031f1a3e4cc72c"
+  },
+  "screenshots": [
+    {
+      "file": "assets/empty-state.png",
+      "viewportWidth": 1200,
+      "x": 36,
+      "y": 249,
+      "width": 1113,
+      "height": 669,
+      "bytes": 42071,
+      "sha256": "1645ec559faaff89a437242f68537f01a0eef1870b8bd4418329d95565cc4f55"
+    },
+    {
+      "file": "assets/section-heading.png",
+      "viewportWidth": 1200,
+      "x": 44,
+      "y": 951,
+      "width": 1112,
+      "height": 577,
+      "bytes": 45551,
+      "sha256": "4d70d929202d021a6fcfcffdd3be85a0d022b1fef101683f9553888f6b64debf"
+    },
+    {
+      "file": "assets/form.png",
+      "viewportWidth": 1200,
+      "x": 44,
+      "y": 1561,
+      "width": 1112,
+      "height": 616,
+      "bytes": 41601,
+      "sha256": "7716d6aa08588375585093ff3765fd3c00c1cc24a15834db31b5e3a0698ebb58"
+    },
+    {
+      "file": "assets/permission.png",
+      "viewportWidth": 1200,
+      "x": 44,
+      "y": 2210,
+      "width": 1112,
+      "height": 506,
+      "bytes": 37905,
+      "sha256": "969b6f5fff519b18eae1a3add17e0fc4a5ba5303f68888895c5be4fa6977b698"
+    },
+    {
+      "file": "assets/unknown-result.png",
+      "viewportWidth": 1200,
+      "x": 44,
+      "y": 2749,
+      "width": 1112,
+      "height": 512,
+      "bytes": 37275,
+      "sha256": "ec898fc752ea749c53d0f1e10c1809ff6b391a83ad18caf189ba948496aa2142"
+    },
+    {
+      "file": "assets/destructive-action.png",
+      "viewportWidth": 1200,
+      "x": 44,
+      "y": 3294,
+      "width": 1112,
+      "height": 534,
+      "bytes": 42796,
+      "sha256": "52636b5e98fe733330d1389ce389aa68de00a6f20bc5eaf20ce0722ac32c7f30"
+    },
+    {
+      "file": "assets/empty-state-mobile.png",
+      "viewportWidth": 390,
+      "x": 12,
+      "y": 293,
+      "width": 351,
+      "height": 952,
+      "bytes": 36485,
+      "sha256": "6c0622289bc18f1fee93876f254d651c1c1341500ae73006064067d0944ffc95"
+    }
+  ],
+  "checks": [
+    {
+      "name": "1200px: no document horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 1185,
+        "width": 1200
+      }
+    },
+    {
+      "name": "1200px: all comparison containers fit",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1200px: all displayed buttons have text names",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "name": "1200px: inputs retain labels and actual constraints",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "1200px: description associations resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1200px: disabled reasons remain visible and readable",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "1200px: necessary facts visible in both variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "1200px: same styling, no hidden-copy tricks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "1200px: demo has no scripts, external resources or persistence handlers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px: no document horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 375,
+        "width": 390
+      }
+    },
+    {
+      "name": "390px: all comparison containers fit",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "390px: all displayed buttons have text names",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "name": "390px: inputs retain labels and actual constraints",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "390px: description associations resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px: disabled reasons remain visible and readable",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "390px: necessary facts visible in both variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "390px: same styling, no hidden-copy tricks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px: demo has no scripts, external resources or persistence handlers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px: no document horizontal overflow",
+      "passed": true,
+      "detail": {
+        "scrollWidth": 305,
+        "width": 320
+      }
+    },
+    {
+      "name": "320px: all comparison containers fit",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320px: all displayed buttons have text names",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "name": "320px: inputs retain labels and actual constraints",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "320px: description associations resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px: disabled reasons remain visible and readable",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "name": "320px: necessary facts visible in both variants",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "320px: same styling, no hidden-copy tricks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "320px: demo has no scripts, external resources or persistence handlers",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}
